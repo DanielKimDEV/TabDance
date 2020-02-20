@@ -53,6 +53,7 @@
 		AB3FD2F623FE5CBA00B5B37D = {
 			isa = PBXGroup;
 			children = (
+				AB3FD31B23FE5D7F00B5B37D /* Sources */,
 				AB3FD30223FE5CBA00B5B37D /* TabDance */,
 				AB3FD30D23FE5CBA00B5B37D /* TabDanceTests */,
 				AB3FD30123FE5CBA00B5B37D /* Products */,
@@ -86,6 +87,29 @@
 			path = TabDanceTests;
 			sourceTree = "<group>";
 		};
+		AB3FD31B23FE5D7F00B5B37D /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AB3FD32123FE5DA700B5B37D /* Controllers */,
+				AB3FD31D23FE5D9100B5B37D /* Views */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		AB3FD31D23FE5D9100B5B37D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AB3FD32123FE5DA700B5B37D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -108,6 +132,7 @@
 				AB3FD2FC23FE5CBA00B5B37D /* Sources */,
 				AB3FD2FD23FE5CBA00B5B37D /* Frameworks */,
 				AB3FD2FE23FE5CBA00B5B37D /* Resources */,
+				AB3FD31A23FE5D5400B5B37D /* Swift Link Check */,
 			);
 			buildRules = (
 			);
@@ -189,6 +214,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AB3FD31A23FE5D5400B5B37D /* Swift Link Check */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Link Check";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AB3FD2FC23FE5CBA00B5B37D /* Sources */ = {
