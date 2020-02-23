@@ -3,13 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		AB3FD30A23FE5CBA00B5B37D /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3FD30023FE5CBA00B5B37D /* TabDance.framework */; };
 		AB3FD30F23FE5CBA00B5B37D /* TabDanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */; };
-		AB3FD31123FE5CBA00B5B37D /* TabDance.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3FD30323FE5CBA00B5B37D /* TabDance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC9EA2723FE72F700C6C07F /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */; };
+		ABC9EA2923FE72F700C6C07F /* IndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1A23FE72F700C6C07F /* IndicatorInfo.swift */; };
+		ABC9EA2A23FE72F700C6C07F /* FXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1B23FE72F700C6C07F /* FXPageControl.m */; };
+		ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */; };
+		ABC9EA2D23FE72F700C6C07F /* PagerTabStripBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */; };
+		ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */; };
+		ABC9EA3023FE72F700C6C07F /* PagerTabStripError.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA2123FE72F700C6C07F /* PagerTabStripError.swift */; };
+		ABC9EA3223FE72F700C6C07F /* PagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA2323FE72F700C6C07F /* PagerTabStripViewController.swift */; };
+		ABC9EA3423FE72F700C6C07F /* ButtonBarPagerTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA2523FE72F700C6C07F /* ButtonBarPagerTabStripViewController.swift */; };
+		ABC9EA3523FE732100C6C07F /* TabDance.h in Headers */ = {isa = PBXBuildFile; fileRef = AB3FD30323FE5CBA00B5B37D /* TabDance.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ABC9EA3623FE732400C6C07F /* FXPageControl.h in Headers */ = {isa = PBXBuildFile; fileRef = ABC9EA2023FE72F700C6C07F /* FXPageControl.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +39,16 @@
 		AB3FD30923FE5CBA00B5B37D /* TabDanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabDanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceTests.swift; sourceTree = "<group>"; };
 		AB3FD31023FE5CBA00B5B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
+		ABC9EA1A23FE72F700C6C07F /* IndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorInfo.swift; sourceTree = "<group>"; };
+		ABC9EA1B23FE72F700C6C07F /* FXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXPageControl.m; sourceTree = "<group>"; };
+		ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarView.swift; sourceTree = "<group>"; };
+		ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerTabStripBehaviour.swift; sourceTree = "<group>"; };
+		ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarViewCell.swift; sourceTree = "<group>"; };
+		ABC9EA2023FE72F700C6C07F /* FXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXPageControl.h; sourceTree = "<group>"; };
+		ABC9EA2123FE72F700C6C07F /* PagerTabStripError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerTabStripError.swift; sourceTree = "<group>"; };
+		ABC9EA2323FE72F700C6C07F /* PagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerTabStripViewController.swift; sourceTree = "<group>"; };
+		ABC9EA2523FE72F700C6C07F /* ButtonBarPagerTabStripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonBarPagerTabStripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,10 +73,11 @@
 		AB3FD2F623FE5CBA00B5B37D = {
 			isa = PBXGroup;
 			children = (
-				AB3FD31B23FE5D7F00B5B37D /* Sources */,
+				ABC9EA1523FE72F700C6C07F /* Sources */,
 				AB3FD30223FE5CBA00B5B37D /* TabDance */,
 				AB3FD30D23FE5CBA00B5B37D /* TabDanceTests */,
 				AB3FD30123FE5CBA00B5B37D /* Products */,
+				D152B0CD722EE8C0245F3952 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,27 +108,36 @@
 			path = TabDanceTests;
 			sourceTree = "<group>";
 		};
-		AB3FD31B23FE5D7F00B5B37D /* Sources */ = {
+		ABC9EA1523FE72F700C6C07F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AB3FD32123FE5DA700B5B37D /* Controllers */,
-				AB3FD31D23FE5D9100B5B37D /* Views */,
+				ABC9EA1623FE72F700C6C07F /* FXPagerControl */,
+				ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */,
+				ABC9EA1A23FE72F700C6C07F /* IndicatorInfo.swift */,
+				ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */,
+				ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */,
+				ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */,
+				ABC9EA2123FE72F700C6C07F /* PagerTabStripError.swift */,
+				ABC9EA2323FE72F700C6C07F /* PagerTabStripViewController.swift */,
+				ABC9EA2523FE72F700C6C07F /* ButtonBarPagerTabStripViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		AB3FD31D23FE5D9100B5B37D /* Views */ = {
+		ABC9EA1623FE72F700C6C07F /* FXPagerControl */ = {
 			isa = PBXGroup;
 			children = (
+				ABC9EA1B23FE72F700C6C07F /* FXPageControl.m */,
+				ABC9EA2023FE72F700C6C07F /* FXPageControl.h */,
 			);
-			name = Views;
+			path = FXPagerControl;
 			sourceTree = "<group>";
 		};
-		AB3FD32123FE5DA700B5B37D /* Controllers */ = {
+		D152B0CD722EE8C0245F3952 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Controllers;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,7 +147,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB3FD31123FE5CBA00B5B37D /* TabDance.h in Headers */,
+				ABC9EA3523FE732100C6C07F /* TabDance.h in Headers */,
+				ABC9EA3623FE732400C6C07F /* FXPageControl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +170,8 @@
 			dependencies = (
 			);
 			name = TabDance;
+			packageProductDependencies = (
+			);
 			productName = TabDance;
 			productReference = AB3FD30023FE5CBA00B5B37D /* TabDance.framework */;
 			productType = "com.apple.product-type.framework";
@@ -147,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AB3FD31723FE5CBA00B5B37D /* Build configuration list for PBXNativeTarget "TabDanceTests" */;
 			buildPhases = (
+				1498D8B9577AED8D38E895A7 /* [CP] Check Pods Manifest.lock */,
 				AB3FD30523FE5CBA00B5B37D /* Sources */,
 				AB3FD30623FE5CBA00B5B37D /* Frameworks */,
 				AB3FD30723FE5CBA00B5B37D /* Resources */,
+				7A6140559F338E4E1775C234 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -173,6 +208,7 @@
 				TargetAttributes = {
 					AB3FD2FF23FE5CBA00B5B37D = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 					AB3FD30823FE5CBA00B5B37D = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -188,6 +224,8 @@
 				Base,
 			);
 			mainGroup = AB3FD2F623FE5CBA00B5B37D;
+			packageReferences = (
+			);
 			productRefGroup = AB3FD30123FE5CBA00B5B37D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -216,6 +254,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1498D8B9577AED8D38E895A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TabDance-TabDanceTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A6140559F338E4E1775C234 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabDance-TabDanceTests/Pods-TabDance-TabDanceTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TabDance-TabDanceTests/Pods-TabDance-TabDanceTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TabDance-TabDanceTests/Pods-TabDance-TabDanceTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		AB3FD31A23FE5D5400B5B37D /* Swift Link Check */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -232,7 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "#if which swiftlint >/dev/null; then\n#    swiftlint\n#else\n#    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\n#fi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -241,6 +318,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */,
+				ABC9EA2723FE72F700C6C07F /* SwipeDirection.swift in Sources */,
+				ABC9EA3023FE72F700C6C07F /* PagerTabStripError.swift in Sources */,
+				ABC9EA2D23FE72F700C6C07F /* PagerTabStripBehaviour.swift in Sources */,
+				ABC9EA2A23FE72F700C6C07F /* FXPageControl.m in Sources */,
+				ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */,
+				ABC9EA2923FE72F700C6C07F /* IndicatorInfo.swift in Sources */,
+				ABC9EA3223FE72F700C6C07F /* PagerTabStripViewController.swift in Sources */,
+				ABC9EA3423FE72F700C6C07F /* ButtonBarPagerTabStripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +472,7 @@
 		AB3FD31523FE5CBA00B5B37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BDR4FLH765;
@@ -399,9 +486,11 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-expression-type-checking=200 -Xfrontend -warn-long-function-bodies=200";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakao.tabdance.TabDance;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,6 +499,7 @@
 		AB3FD31623FE5CBA00B5B37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BDR4FLH765;
@@ -423,6 +513,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies -Xfrontend -warn-long-expression-type-checking=200 -Xfrontend -warn-long-function-bodies=200";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kakao.tabdance.TabDance;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -434,6 +525,7 @@
 		AB3FD31823FE5CBA00B5B37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDR4FLH765;
 				INFOPLIST_FILE = TabDanceTests/Info.plist;
@@ -452,6 +544,7 @@
 		AB3FD31923FE5CBA00B5B37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BDR4FLH765;
 				INFOPLIST_FILE = TabDanceTests/Info.plist;

@@ -8,12 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-//! Project version number for TabDance.
 FOUNDATION_EXPORT double TabDanceVersionNumber;
 
-//! Project version string for TabDance.
 FOUNDATION_EXPORT const unsigned char TabDanceVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <TabDance/PublicHeader.h>
 
 
+#import "FXPageControl.h"
