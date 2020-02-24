@@ -12,7 +12,6 @@ import SnapKit
 class ViewController: UIViewController {
 
     var button: UIButton!
-    var button2: UIButton!
     
     var label: UILabel!
     override func viewDidLoad() {
@@ -30,13 +29,12 @@ extension ViewController {
     
     func setUpLayout() {
         button = UIButton()
-        button2 = UIButton()
         
         label = UILabel()
         
         self.view.addSubview(button)
         self.view.addSubview(label)
-        self.view.addSubview(button2)
+
         
         label.snp.makeConstraints{ m in
             m.centerX.centerY.equalToSuperview()
@@ -47,15 +45,10 @@ extension ViewController {
             m.centerX.equalToSuperview()
             m.height.equalTo(32)
         }
-        
-        button2.snp.makeConstraints{ m in
-            m.top.equalTo(button.snp.bottom).offset(56)
-            m.centerX.equalToSuperview()
-            m.height.equalTo(32)
-        }
+     
         
         button.addTarget(self, action: #selector(tapButton(_:)), for: .touchUpInside)
-        button2.addTarget(self, action: #selector(tapButton2(_:)), for: .touchUpInside)
+
     }
     
     func setupStyling() {
@@ -66,37 +59,16 @@ extension ViewController {
         button.setTitleColor(.black, for: .normal)
         button.setBackgroundColor(.white, for: .normal)
         button.setBackgroundColor(.gray, for: .selected)
-        
-        button2.setTitle("UIPageView Testing Version", for: .normal)
-        button2.titleLabel?.textColor = UIColor.black
-        button2.layer.borderColor = UIColor.gray.cgColor
-        button2.layer.borderWidth = 1
-        button2.setTitleColor(.black, for: .normal)
-        button2.setBackgroundColor(.white, for: .normal)
-        button2.setBackgroundColor(.gray, for: .selected)
-        
+  
         label.text = "TESTING TAB"
         label.textColor = .black
 
     }
     
+
     @objc
     func tapButton(_ btn: UIButton) {
-//        let tabDanceViewController = TabDanceExampleViewController()
-//        let inset :CGFloat = 20
-//        tabDanceViewController.pagerBarBackgroundColor = .white
-//        tabDanceViewController.pagerBarLeftContentInset = inset
-//        tabDanceViewController.pagerBarRightContentInset = inset
-//        tabDanceViewController.pagerBarHeight = 38
-//        tabDanceViewController.pagerBarMinimumInteritemSpacing = 24
-//        tabDanceViewController.pagerBarItemLeftRightMargin = 0
-//        let nvc = UINavigationController(rootViewController: tabDanceViewController)
-//        self.present(nvc, animated: true)
-    }
-    
-    @objc
-    func tapButton2(_ btn: UIButton) {
-        let tabdanceViewController = TabExample2ViewController()
+        let tabdanceViewController = TabExampleViewController()
         let nvc = UINavigationController(rootViewController: tabdanceViewController)
         self.present(nvc, animated: true)
     }

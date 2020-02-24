@@ -9,11 +9,7 @@
 import Foundation
 import UIKit
 
-
-
-//Settings
-
-    //Todo - 뷰가 회전 할때는 고려 하지 않음, 뷰 회전 할때 다시 잡아 주는 동작 필요함.
+//Todo - 뷰가 회전 할때는 고려 하지 않음, 뷰 회전 할때 다시 잡아 주는 동작 필요함.
 open class TabDanceViewController: UIPageViewController {
     
     // Attributes
@@ -21,17 +17,11 @@ open class TabDanceViewController: UIPageViewController {
     internal var isViewRotating = false
     private var shouldUpdatepagerBarView = true
     private var collectionViewDidLoad = false
-    
-
     private var lastContentOffset: CGFloat = 0.0
     private var pageBeforeRotate = 0
     private var lastSize = CGSize(width: 0, height: 0)
-
-    
     public var pagerBarItemSpec: PagerBarItemSpec<PagerBarViewCell>!
-    
     public var settings = TabDanceSettings()
-    
     
     var pendingPage:Int?
     var presentIndex = 0
@@ -81,7 +71,7 @@ open class TabDanceViewController: UIPageViewController {
         pagerBar.layoutIfNeeded()
         isViewAppearing = true
     }
-
+    
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         isViewAppearing = false
@@ -92,7 +82,7 @@ open class TabDanceViewController: UIPageViewController {
         print("view Did Layout Subvies")
         
         guard isViewAppearing else { return }
-
+        
         cachedCellWidths = calculateWidths()
         pagerBar.collectionViewLayout.invalidateLayout()
         
@@ -125,7 +115,7 @@ open class TabDanceViewController: UIPageViewController {
         })
     }
     
-
+    
     
     private func settingViewFrame() {
         let naviHeight:CGFloat = 100

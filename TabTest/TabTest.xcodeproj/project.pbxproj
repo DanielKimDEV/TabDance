@@ -15,12 +15,11 @@
 		ABC9EA8A23FE970B00C6C07F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ABC9EA8923FE970B00C6C07F /* SnapKit */; };
 		ABC9EA8D23FE972B00C6C07F /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; };
 		ABC9EA8E23FE972B00C6C07F /* TabDance.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		ABC9EA9123FE9AC800C6C07F /* TabExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9023FE9AC800C6C07F /* TabExampleViewController.swift */; };
 		ABC9EA9323FED3C600C6C07F /* TabChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */; };
 		ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9523FED40200C6C07F /* Cell.swift */; };
 		ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9723FED6C800C6C07F /* DataProvider.swift */; };
 		ABFA26CB2402BA0F00430334 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ABFA26CA2402BA0F00430334 /* Kingfisher */; };
-		ABFA26FA24039CB100430334 /* TabExample2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26F924039CB100430334 /* TabExample2ViewController.swift */; };
+		ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA2703240424CE00430334 /* TabExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,11 +45,10 @@
 		ABC9EA7A23FE968F00C6C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC9EA7C23FE968F00C6C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABC9EA8C23FE972B00C6C07F /* TabDance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabDance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABC9EA9023FE9AC800C6C07F /* TabExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExampleViewController.swift; sourceTree = "<group>"; };
 		ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabChildExampleViewController.swift; sourceTree = "<group>"; };
 		ABC9EA9523FED40200C6C07F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABC9EA9723FED6C800C6C07F /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		ABFA26F924039CB100430334 /* TabExample2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExample2ViewController.swift; sourceTree = "<group>"; };
+		ABFA2703240424CE00430334 /* TabExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +92,8 @@
 				ABC9EA7723FE968F00C6C07F /* Assets.xcassets */,
 				ABC9EA7923FE968F00C6C07F /* LaunchScreen.storyboard */,
 				ABC9EA7C23FE968F00C6C07F /* Info.plist */,
-				ABC9EA9023FE9AC800C6C07F /* TabExampleViewController.swift */,
 				ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */,
-				ABFA26F924039CB100430334 /* TabExample2ViewController.swift */,
+				ABFA2703240424CE00430334 /* TabExampleViewController.swift */,
 			);
 			path = TabTest;
 			sourceTree = "<group>";
@@ -202,8 +199,7 @@
 				ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */,
 				ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */,
 				ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */,
-				ABC9EA9123FE9AC800C6C07F /* TabExampleViewController.swift in Sources */,
-				ABFA26FA24039CB100430334 /* TabExample2ViewController.swift in Sources */,
+				ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */,
 				ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
