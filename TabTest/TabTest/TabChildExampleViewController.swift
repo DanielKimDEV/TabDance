@@ -8,6 +8,7 @@
 
 import Foundation
 import TabDance
+import UIKit
 
 class ChildExampleViewController: UIViewController, IndicatorInfoProvider {
 

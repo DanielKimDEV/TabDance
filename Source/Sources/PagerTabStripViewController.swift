@@ -4,7 +4,7 @@
 //  Copyright © 2020 Daniel Kim. All rights reserved.
 //
 import Foundation
-
+import UIKit
 // MARK: Protocols
 
 public protocol IndicatorInfoProvider {
