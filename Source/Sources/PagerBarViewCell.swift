@@ -9,10 +9,10 @@ import Foundation
 
 open class PagerBarViewCell: UICollectionViewCell {
     
-    var imageView: UIImageView = {
+    open var imageView: UIImageView = {
         return UIImageView()
     }()
-    var label: UILabel = {
+    open var label: UILabel = {
        return UILabel()
     }()
     

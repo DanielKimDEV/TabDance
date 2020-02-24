@@ -36,7 +36,12 @@ class TabDanceExampleViewController: PagerBarTabStripViewController {
         self.navigationController?.navigationBar.backgroundColor = .white
         self.navigationController?.navigationBar.barTintColor = .white
         self.navigationController?.navigationBar.shadowImage = UIImage()
-
+        
+        changeCurrentIndexProgressive = { [weak self] (oldCell: PagerBarViewCell?, newCell: PagerBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            guard changeCurrentIndex == true else { return }
+            oldCell?.label.textColor = .gray
+            newCell?.label.textColor = .black
+        }
     }
     
     @objc
