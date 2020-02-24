@@ -93,9 +93,9 @@ open class PagerBarView: UICollectionView {
         self.addConstraint(NSLayoutConstraint(item: underLineView, attribute: .bottom, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: -1))
     }
 
-    open func moveTo(index: Int, animated: Bool, swipeDirection: SwipeDirection, pagerScroll: PagerScroll) {
+    open func moveTo(index: Int, animated: Bool, pagerScroll: PagerScroll) {
         selectedIndex = index
-        updateSelectedBarPosition(    animated, swipeDirection: swipeDirection, pagerScroll: pagerScroll)
+        updateSelectedBarPosition(animated, pagerScroll: pagerScroll)
     }
 
     open func move(fromIndex: Int, toIndex: Int, progressPercentage: CGFloat, pagerScroll: PagerScroll) {
@@ -136,7 +136,7 @@ open class PagerBarView: UICollectionView {
         setContentOffset(CGPoint(x: targetContentOffset, y: 0), animated: false)
     }
 
-    open func updateSelectedBarPosition(_ animated: Bool, swipeDirection: SwipeDirection, pagerScroll: PagerScroll) {
+    open func updateSelectedBarPosition(_ animated: Bool, pagerScroll: PagerScroll) {
         var selectedBarFrame = selectedBar.frame
 
         let selectedCellIndexPath = IndexPath(item: selectedIndex, section: 0)

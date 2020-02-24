@@ -10,50 +10,14 @@ import Foundation
 import TabDance
 import UIKit
 
-class ChildExampleViewController: UIViewController, IndicatorInfoProvider {
-
-    var itemInfo: IndicatorInfo = "View"
-
-    init(itemInfo: IndicatorInfo) {
-        self.itemInfo = itemInfo
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "TabDance"
-
-        view.addSubview(label)
-        view.backgroundColor = .white
-
-        
-        label.snp.makeConstraints{ m in
-            m.centerX.equalToSuperview()
-        }
-    }
-
-    // IndicatorInfoProvider
-
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return itemInfo
-    }
-}
-
-
-class TableChildExampleViewController: UITableViewController, IndicatorInfoProvider {
+class EmojiReactionMemberTableViewController: UITableViewController, IndicatorInfoProvider {
+    var tabDanceBarHeight: CGFloat = 38
 
     let cellIdentifier = "Cell"
-    var blackTheme = false
-    var itemInfo = IndicatorInfo(title: "View")
 
-    init(style: UITableView.Style, itemInfo: IndicatorInfo) {
+    var itemInfo = TabIndicatorInfo(title: "View")
+
+    init(style: UITableView.Style, itemInfo: TabIndicatorInfo) {
         self.itemInfo = itemInfo
         super.init(style: style)
     }
@@ -70,14 +34,18 @@ class TableChildExampleViewController: UITableViewController, IndicatorInfoProvi
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
-        if blackTheme {
-            tableView.backgroundColor = UIColor.white
-        }
+        
+        setTableViewTopInsets(tableView: tableView)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+
     }
 
     // UITableViewDataSource
@@ -100,7 +68,7 @@ class TableChildExampleViewController: UITableViewController, IndicatorInfoProvi
 
     // IndicatorInfoProvider
 
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+    func indicatorInfo(for pagerTabStripController: TabDanceViewController) -> TabIndicatorInfo {
         return itemInfo
     }
 

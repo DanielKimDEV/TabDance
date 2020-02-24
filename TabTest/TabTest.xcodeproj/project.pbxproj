@@ -20,6 +20,7 @@
 		ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9523FED40200C6C07F /* Cell.swift */; };
 		ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9723FED6C800C6C07F /* DataProvider.swift */; };
 		ABFA26CB2402BA0F00430334 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ABFA26CA2402BA0F00430334 /* Kingfisher */; };
+		ABFA26FA24039CB100430334 /* TabExample2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26F924039CB100430334 /* TabExample2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabChildExampleViewController.swift; sourceTree = "<group>"; };
 		ABC9EA9523FED40200C6C07F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABC9EA9723FED6C800C6C07F /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		ABFA26F924039CB100430334 /* TabExample2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabExample2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				ABC9EA7C23FE968F00C6C07F /* Info.plist */,
 				ABC9EA9023FE9AC800C6C07F /* TabExampleViewController.swift */,
 				ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */,
+				ABFA26F924039CB100430334 /* TabExample2ViewController.swift */,
 			);
 			path = TabTest;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */,
 				ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */,
 				ABC9EA9123FE9AC800C6C07F /* TabExampleViewController.swift in Sources */,
+				ABFA26FA24039CB100430334 /* TabExample2ViewController.swift in Sources */,
 				ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

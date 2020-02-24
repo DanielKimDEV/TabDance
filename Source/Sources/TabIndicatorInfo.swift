@@ -7,7 +7,7 @@
 import Foundation
 import UIKit
 
-public struct IndicatorInfo {
+public struct TabIndicatorInfo {
 
     public var title: String?
     public var image: UIImage?
@@ -44,7 +44,7 @@ public struct IndicatorInfo {
 
 }
 
-extension IndicatorInfo : ExpressibleByStringLiteral {
+extension TabIndicatorInfo : ExpressibleByStringLiteral {
 
     public init(stringLiteral value: String) {
         title = value
