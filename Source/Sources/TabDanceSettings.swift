@@ -9,28 +9,6 @@
 import Foundation
 import UIKit
 
-public protocol IndicatorInfoProvider:UIViewController {
-    func indicatorInfo(for tabDanceViewController: TabDanceViewController) -> TabIndicatorInfo
-    var tabDanceBarHeight:CGFloat { get set }
-}
-
-extension IndicatorInfoProvider {
-    public func setTableViewTopInsets(tableView:UITableView) {
-        tableView.contentInset = UIEdgeInsets(top: tabDanceBarHeight, left: 0, bottom: 0, right: 0)
-    }
-}
-
-public enum PagerBarItemSpec<CellType: UICollectionViewCell> {
-    case cellClass(width:((TabIndicatorInfo)-> CGFloat))
-    public var weight: ((TabIndicatorInfo) -> CGFloat) {
-        switch self {
-        case .cellClass(let widthCallback):
-            return widthCallback
-        }
-    }
-}
-
-
 public struct TabDanceSettings {
     public struct BarStyle{
         public var tabDanceBarBackgroundColor: UIColor?
@@ -65,4 +43,50 @@ public struct TabDanceSettings {
     
     var barStyle = BarStyle()
     var contentStyle = ContentStyle()
+}
+
+public enum PagerTabStripBehaviour {
+
+    case common(skipIntermediateViewControllers: Bool)
+    case progressive(skipIntermediateViewControllers: Bool, elasticIndicatorLimit: Bool)
+
+    public var skipIntermediateViewControllers: Bool {
+        switch self {
+        case .common(let skipIntermediateViewControllers):
+            return skipIntermediateViewControllers
+        case .progressive(let skipIntermediateViewControllers, _):
+            return skipIntermediateViewControllers
+        }
+    }
+
+    public var isProgressiveIndicator: Bool {
+        switch self {
+        case .common:
+            return false
+        case .progressive:
+            return true
+        }
+    }
+}
+
+
+public protocol IndicatorInfoProvider:UIViewController {
+    func indicatorInfo(for tabDanceViewController: TabDanceViewController) -> TabIndicatorInfo
+    var tabDanceBarHeight:CGFloat { get set }
+}
+
+extension IndicatorInfoProvider {
+    public func setTableViewTopInsets(tableView:UITableView) {
+        tableView.contentInset = UIEdgeInsets(top: tabDanceBarHeight, left: 0, bottom: 0, right: 0)
+    }
+}
+
+public enum PagerBarItemSpec<CellType: UICollectionViewCell> {
+    case cellClass(width:((TabIndicatorInfo)-> CGFloat))
+    public var weight: ((TabIndicatorInfo) -> CGFloat) {
+        switch self {
+        case .cellClass(let widthCallback):
+            return widthCallback
+        }
+    }
 }

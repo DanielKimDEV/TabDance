@@ -92,8 +92,8 @@
 				ABC9EA7723FE968F00C6C07F /* Assets.xcassets */,
 				ABC9EA7923FE968F00C6C07F /* LaunchScreen.storyboard */,
 				ABC9EA7C23FE968F00C6C07F /* Info.plist */,
-				ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */,
 				ABFA2703240424CE00430334 /* TabExampleViewController.swift */,
+				ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */,
 			);
 			path = TabTest;
 			sourceTree = "<group>";

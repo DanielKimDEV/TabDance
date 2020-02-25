@@ -79,7 +79,6 @@ open class PagerBarView: UICollectionView {
         super.init(frame: frame, collectionViewLayout: layout)
         addSubview(underLineView)
         addSubview(selectedBar)
-
     }
     
     func setUnderLineView() {

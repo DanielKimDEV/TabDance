@@ -22,6 +22,9 @@ open class TabDanceViewController: UIPageViewController {
     private var lastSize = CGSize(width: 0, height: 0)
     public var pagerBarItemSpec: PagerBarItemSpec<PagerBarViewCell>!
     public var settings = TabDanceSettings()
+    private var shouldUpdateButtonBarView = true
+    open var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
+    
     
     var pendingPage:Int?
     var presentIndex = 0
@@ -34,6 +37,7 @@ open class TabDanceViewController: UIPageViewController {
             print("index change \(presentIndex)")
         }
     }
+    private var pastIndex = 0
     
     open lazy var arrViewControllers = [UIViewController]()
     
@@ -44,9 +48,7 @@ open class TabDanceViewController: UIPageViewController {
     public var changeCurrentIndex: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ animated: Bool) -> Void)?
     
     public var changeCurrentIndexProgressive: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ progressPercentage: CGFloat, _ changeCurrentIndex: Bool, _ animated: Bool) -> Void)?
-    
-    open var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
-    
+
     
     lazy private var cachedCellWidths: [CGFloat]? = { [unowned self] in
         return self.calculateWidths()
@@ -157,12 +159,11 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
     // MARK: - Public Methods
     
     open func moveToViewController(at index: Int, animated: Bool = true) {
-        
         let selectedVC = arrViewControllers[index]
-        
         setViewControllers([selectedVC], direction: index > self.presentIndex ? .forward : .reverse, animated: true, completion: nil)
-        
-        presentIndex = index
+        pastIndex = presentVisibleIndex
+        presentVisibleIndex = index
+        updateIndicator(for: self, fromIndex: pastIndex, toIndex: presentVisibleIndex,  indexWasChanged: true)
     }
     
     private func cellForItems(at indexPaths: [IndexPath], reloadIfNotVisible reload: Bool = true) -> [PagerBarViewCell?] {
@@ -177,13 +178,23 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
             .compactMap { (indexPath: IndexPath) -> IndexPath? in
                 return (indexPath.item >= 0 && indexPath.item < pagerBar.numberOfItems(inSection: indexPath.section)) ? indexPath : nil
             }
-            
             if !indexPathsToReload.isEmpty {
                 pagerBar.reloadItems(at: indexPathsToReload)
             }
         }
         
         return cells
+    }
+
+    open func updateIndicator(for viewController: TabDanceViewController, fromIndex: Int, toIndex: Int, indexWasChanged: Bool) {
+        guard shouldUpdateButtonBarView else { return }
+
+            let oldIndexPath = IndexPath(item: presentVisibleIndex != fromIndex ? fromIndex : toIndex, section: 0)
+            let newIndexPath = IndexPath(item: presentVisibleIndex, section: 0)
+
+            let cells = cellForItems(at: [oldIndexPath, newIndexPath], reloadIfNotVisible: collectionViewDidLoad)
+            changeCurrentIndexProgressive!(cells.first!, cells.last!, 1, indexWasChanged, true)
+        
     }
     
     // MARK: - UICollectionViewDelegateFlowLayut
@@ -245,15 +256,11 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
             cell.imageView.highlightedImage = highlightedImage
         }
         
-        if pagerBehaviour.isProgressiveIndicator {
-            if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {
-                changeCurrentIndexProgressive(settings.contentStyle.currentIndex == indexPath.item ? nil : cell, settings.contentStyle.currentIndex == indexPath.item ? cell : nil, 1, true, false)
-            }
-        } else {
-            if let changeCurrentIndex = changeCurrentIndex {
-                changeCurrentIndex(settings.contentStyle.currentIndex == indexPath.item ? nil : cell, settings.contentStyle.currentIndex == indexPath.item ? cell : nil, false)
-            }
+        if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {
+            print("check1 \(indexPath.item)")
+            changeCurrentIndexProgressive(self.pastIndex == indexPath.item ? nil : cell, self.presentVisibleIndex == indexPath.item ? cell : nil, 1, true, false)
         }
+     
         cell.isAccessibilityElement = true
         cell.accessibilityLabel = indicatorInfo.accessibilityLabel ?? cell.label.text
         cell.accessibilityTraits.insert([.button, .header])
@@ -270,8 +277,11 @@ extension TabDanceViewController: UIPageViewControllerDataSource, UIPageViewCont
         guard completed, let page = pendingPage else {
             return
         }
-        self.presentVisibleIndex = page
+        pastIndex = presentVisibleIndex
+        presentVisibleIndex = page
+
         pagerBar.moveTo(index: page, animated: true, pagerScroll: .yes)
+        updateIndicator(for: self, fromIndex: pastIndex, toIndex: presentVisibleIndex,  indexWasChanged: true)
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController,

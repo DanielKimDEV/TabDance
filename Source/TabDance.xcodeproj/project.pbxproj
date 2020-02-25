@@ -9,10 +9,8 @@
 /* Begin PBXBuildFile section */
 		AB3FD30A23FE5CBA00B5B37D /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3FD30023FE5CBA00B5B37D /* TabDance.framework */; };
 		AB3FD30F23FE5CBA00B5B37D /* TabDanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */; };
-		ABC9EA2723FE72F700C6C07F /* SwipeDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */; };
 		ABC9EA2923FE72F700C6C07F /* TabIndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */; };
 		ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */; };
-		ABC9EA2D23FE72F700C6C07F /* PagerTabStripBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */; };
 		ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */; };
 		ABFA26F82403907500430334 /* TabDanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26F72403907500430334 /* TabDanceViewController.swift */; };
 		ABFA26FF2404145700430334 /* TabDanceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26FE2404145700430334 /* TabDanceSettings.swift */; };
@@ -34,10 +32,8 @@
 		AB3FD30923FE5CBA00B5B37D /* TabDanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabDanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceTests.swift; sourceTree = "<group>"; };
 		AB3FD31023FE5CBA00B5B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeDirection.swift; sourceTree = "<group>"; };
 		ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorInfo.swift; sourceTree = "<group>"; };
 		ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarView.swift; sourceTree = "<group>"; };
-		ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerTabStripBehaviour.swift; sourceTree = "<group>"; };
 		ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarViewCell.swift; sourceTree = "<group>"; };
 		ABFA26F72403907500430334 /* TabDanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceViewController.swift; sourceTree = "<group>"; };
 		ABFA26FE2404145700430334 /* TabDanceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceSettings.swift; sourceTree = "<group>"; };
@@ -102,10 +98,8 @@
 		ABC9EA1523FE72F700C6C07F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				ABC9EA1823FE72F700C6C07F /* SwipeDirection.swift */,
 				ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */,
 				ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */,
-				ABC9EA1E23FE72F700C6C07F /* PagerTabStripBehaviour.swift */,
 				ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */,
 				ABFA26F72403907500430334 /* TabDanceViewController.swift */,
 				ABFA26FE2404145700430334 /* TabDanceSettings.swift */,
@@ -286,8 +280,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */,
-				ABC9EA2723FE72F700C6C07F /* SwipeDirection.swift in Sources */,
-				ABC9EA2D23FE72F700C6C07F /* PagerTabStripBehaviour.swift in Sources */,
 				ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */,
 				ABFA26FF2404145700430334 /* TabDanceSettings.swift in Sources */,
 				ABFA26F82403907500430334 /* TabDanceViewController.swift in Sources */,
