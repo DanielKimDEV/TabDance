@@ -130,9 +130,7 @@ open class TabDanceViewController: UIPageViewController {
         pagerBar.translatesAutoresizingMaskIntoConstraints = false
             
         self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
-        
         self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0))
-        
         self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.settings.barStyle.tabDanceHeight))
         
         pagerBar.delegate = self
@@ -245,7 +243,6 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
         cell.accessibilityTraits.insert([.button, .header])
         return cell
     }
-    
 }
 
 

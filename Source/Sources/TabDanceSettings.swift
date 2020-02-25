@@ -50,7 +50,7 @@ public struct TabDanceSettings {
 }
 
 
-public protocol IndicatorInfoProvider:UIViewController {
+public protocol IndicatorInfoProvider: UIViewController {
     func indicatorInfo(for tabDanceViewController: TabDanceViewController) -> TabIndicatorInfo
     var tabDanceBarHeight:CGFloat { get set }
 }
