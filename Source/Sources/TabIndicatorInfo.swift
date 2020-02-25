@@ -10,7 +10,6 @@ import UIKit
 public struct TabIndicatorInfo {
 
     public var title: String?
-    public var image: UIImage?
     public var highlightedImage: UIImage?
     public var accessibilityLabel: String?
     public var userInfo: Any?
@@ -20,28 +19,18 @@ public struct TabIndicatorInfo {
         self.accessibilityLabel = title
     }
     
-    public init(image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
-        self.image = image
-        self.highlightedImage = highlightedImage
-        self.userInfo = userInfo
-    }
-    
-    public init(title: String?, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
+    public init(title: String?, userInfo: Any? = nil) {
         self.title = title
         self.accessibilityLabel = title
-        self.image = image
-        self.highlightedImage = highlightedImage
+   
         self.userInfo = userInfo
     }
     
-    public init(title: String?, accessibilityLabel:String?, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
+    public init(title: String?, accessibilityLabel:String?, userInfo: Any? = nil) {
         self.title = title
         self.accessibilityLabel = accessibilityLabel
-        self.image = image
-        self.highlightedImage = highlightedImage
         self.userInfo = userInfo
     }
-
 }
 
 extension TabIndicatorInfo : ExpressibleByStringLiteral {

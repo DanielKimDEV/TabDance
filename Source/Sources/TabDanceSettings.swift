@@ -27,6 +27,9 @@ public struct TabDanceSettings {
         public var tabDanceItemTitleColor: UIColor?
         public var tabDanceItemsShouldFillAvailableWidth = true
         
+        public var tabDanceItemSelectedLabelColor: UIColor = .black
+        public var tabDanceItemUnselectedLabelColor: UIColor = .gray
+        
         public var tabDanceHeight: CGFloat = 38
         
         public var pagerBottomBarUnderLine: Bool = false
@@ -39,10 +42,11 @@ public struct TabDanceSettings {
     public struct ContentStyle {
         public var contentViewBackgroundColor:UIColor = .white
         public var currentIndex = 0
+        public var infinitiScroll = false
     }
     
-    var barStyle = BarStyle()
-    var contentStyle = ContentStyle()
+    public var barStyle = BarStyle()
+    public var contentStyle = ContentStyle()
 }
 
 public enum PagerTabStripBehaviour {

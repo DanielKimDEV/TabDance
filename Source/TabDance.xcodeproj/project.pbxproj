@@ -14,6 +14,7 @@
 		ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */; };
 		ABFA26F82403907500430334 /* TabDanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26F72403907500430334 /* TabDanceViewController.swift */; };
 		ABFA26FF2404145700430334 /* TabDanceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26FE2404145700430334 /* TabDanceSettings.swift */; };
+		ABFA27262404F55200430334 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABFA27242404F55200430334 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		AB3FD30023FE5CBA00B5B37D /* TabDance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TabDance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB3FD30423FE5CBA00B5B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB3FD30923FE5CBA00B5B37D /* TabDanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabDanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceTests.swift; sourceTree = "<group>"; };
 		AB3FD31023FE5CBA00B5B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +37,7 @@
 		ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarViewCell.swift; sourceTree = "<group>"; };
 		ABFA26F72403907500430334 /* TabDanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceViewController.swift; sourceTree = "<group>"; };
 		ABFA26FE2404145700430334 /* TabDanceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceSettings.swift; sourceTree = "<group>"; };
+		ABFA27242404F55200430334 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +62,8 @@
 		AB3FD2F623FE5CBA00B5B37D = {
 			isa = PBXGroup;
 			children = (
+				ABFA27222404F55200430334 /* TabDance */,
 				ABC9EA1523FE72F700C6C07F /* Sources */,
-				AB3FD30223FE5CBA00B5B37D /* TabDance */,
 				AB3FD30D23FE5CBA00B5B37D /* TabDanceTests */,
 				AB3FD30123FE5CBA00B5B37D /* Products */,
 				D152B0CD722EE8C0245F3952 /* Frameworks */,
@@ -76,14 +77,6 @@
 				AB3FD30923FE5CBA00B5B37D /* TabDanceTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AB3FD30223FE5CBA00B5B37D /* TabDance */ = {
-			isa = PBXGroup;
-			children = (
-				AB3FD30423FE5CBA00B5B37D /* Info.plist */,
-			);
-			path = TabDance;
 			sourceTree = "<group>";
 		};
 		AB3FD30D23FE5CBA00B5B37D /* TabDanceTests */ = {
@@ -105,6 +98,14 @@
 				ABFA26FE2404145700430334 /* TabDanceSettings.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		ABFA27222404F55200430334 /* TabDance */ = {
+			isa = PBXGroup;
+			children = (
+				ABFA27242404F55200430334 /* Info.plist */,
+			);
+			path = TabDance;
 			sourceTree = "<group>";
 		};
 		D152B0CD722EE8C0245F3952 /* Frameworks */ = {
@@ -209,6 +210,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABFA27262404F55200430334 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

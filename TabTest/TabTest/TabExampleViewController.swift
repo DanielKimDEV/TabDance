@@ -16,8 +16,10 @@ class TabExampleViewController : TabDanceViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        settings.contentStyle.infinitiScroll = false
         initViewControllers()
         settingStyling()
+
     }
     
     func settingStyling() {
@@ -31,12 +33,12 @@ class TabExampleViewController : TabDanceViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationItem.setLeftBarButton(closeButton, animated: true)
         
-        changeCurrentIndexProgressive = { [weak self] (oldCell: PagerBarViewCell?, newCell: PagerBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+        changeCurrentIndexProgressive = {
+            (oldCell: PagerBarViewCell?, newCell: PagerBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
                guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = .gray
             newCell?.label.textColor = .black
        }
-           
     }
     
     @objc func dismissView() {
@@ -70,6 +72,5 @@ extension TabExampleViewController {
                                animated: true,
                                completion: nil)
         }
-
     }
 }

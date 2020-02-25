@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB8011292404F6B3005593E2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB8011282404F6B3005593E2 /* SnapKit */; };
+		AB80112C2404F6E2005593E2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB80112B2404F6E2005593E2 /* Kingfisher */; };
 		ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA6E23FE968D00C6C07F /* AppDelegate.swift */; };
 		ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA7023FE968D00C6C07F /* SceneDelegate.swift */; };
 		ABC9EA7323FE968D00C6C07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA7223FE968D00C6C07F /* ViewController.swift */; };
 		ABC9EA7823FE968F00C6C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC9EA7723FE968F00C6C07F /* Assets.xcassets */; };
 		ABC9EA7B23FE968F00C6C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC9EA7923FE968F00C6C07F /* LaunchScreen.storyboard */; };
-		ABC9EA8A23FE970B00C6C07F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = ABC9EA8923FE970B00C6C07F /* SnapKit */; };
 		ABC9EA8D23FE972B00C6C07F /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; };
 		ABC9EA8E23FE972B00C6C07F /* TabDance.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABC9EA9323FED3C600C6C07F /* TabChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */; };
 		ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9523FED40200C6C07F /* Cell.swift */; };
 		ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9723FED6C800C6C07F /* DataProvider.swift */; };
-		ABFA26CB2402BA0F00430334 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = ABFA26CA2402BA0F00430334 /* Kingfisher */; };
 		ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA2703240424CE00430334 /* TabExampleViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,9 +56,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABFA26CB2402BA0F00430334 /* Kingfisher in Frameworks */,
+				AB80112C2404F6E2005593E2 /* Kingfisher in Frameworks */,
 				ABC9EA8D23FE972B00C6C07F /* TabDance.framework in Frameworks */,
-				ABC9EA8A23FE970B00C6C07F /* SnapKit in Frameworks */,
+				AB8011292404F6B3005593E2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,8 +133,8 @@
 			);
 			name = TabTest;
 			packageProductDependencies = (
-				ABC9EA8923FE970B00C6C07F /* SnapKit */,
-				ABFA26CA2402BA0F00430334 /* Kingfisher */,
+				AB8011282404F6B3005593E2 /* SnapKit */,
+				AB80112B2404F6E2005593E2 /* Kingfisher */,
 			);
 			productName = TabTest;
 			productReference = ABC9EA6B23FE968D00C6C07F /* TabTest.app */;
@@ -165,8 +165,8 @@
 			);
 			mainGroup = ABC9EA6223FE968D00C6C07F;
 			packageReferences = (
-				ABC9EA8823FE970B00C6C07F /* XCRemoteSwiftPackageReference "SnapKit" */,
-				ABFA26C92402BA0F00430334 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				AB8011272404F6B3005593E2 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AB80112A2404F6E2005593E2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = ABC9EA6C23FE968D00C6C07F /* Products */;
 			projectDirPath = "";
@@ -392,7 +392,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		ABC9EA8823FE970B00C6C07F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		AB8011272404F6B3005593E2 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -400,7 +400,7 @@
 				minimumVersion = 5.0.1;
 			};
 		};
-		ABFA26C92402BA0F00430334 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		AB80112A2404F6E2005593E2 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
 			requirement = {
@@ -411,14 +411,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		ABC9EA8923FE970B00C6C07F /* SnapKit */ = {
+		AB8011282404F6B3005593E2 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ABC9EA8823FE970B00C6C07F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = AB8011272404F6B3005593E2 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
-		ABFA26CA2402BA0F00430334 /* Kingfisher */ = {
+		AB80112B2404F6E2005593E2 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = ABFA26C92402BA0F00430334 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = AB80112A2404F6E2005593E2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */

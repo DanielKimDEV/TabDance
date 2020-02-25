@@ -9,9 +9,6 @@ import Foundation
 
 open class PagerBarViewCell: UICollectionViewCell {
     
-    open var imageView: UIImageView = {
-        return UIImageView()
-    }()
     open var label: UILabel = {
        return UILabel()
     }()
@@ -24,7 +21,6 @@ open class PagerBarViewCell: UICollectionViewCell {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         isAccessibilityElement = true
         accessibilityTraits.insert([.button, .header])
     }
@@ -45,18 +41,9 @@ open class PagerBarViewCell: UICollectionViewCell {
 
     
     private func setupViews() {
-        
-        self.addSubview(imageView)
         self.addSubview(label)
-        
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         label.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
-        self.addConstraint(NSLayoutConstraint(item: imageView, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-        
         self.addConstraint(NSLayoutConstraint(item: label, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: label, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0))
-
     }
 }
