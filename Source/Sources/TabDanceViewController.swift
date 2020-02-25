@@ -23,8 +23,7 @@ open class TabDanceViewController: UIPageViewController {
     public var pagerBarItemSpec: PagerBarItemSpec<PagerBarViewCell>!
     open var settings = TabDanceSettings()
     private var shouldUpdateButtonBarView = true
-    open var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
-    
+
     var pendingPage:Int?
     private var presentIndex = 0
     var presentVisibleIndex:Int {
@@ -43,12 +42,8 @@ open class TabDanceViewController: UIPageViewController {
     
     // Views
     var pagerBar: PagerBarView!
-    
     public var changeCurrentIndex: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ animated: Bool) -> Void)?
-    
     public var changeCurrentIndexProgressive: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ progressPercentage: CGFloat, _ changeCurrentIndex: Bool, _ animated: Bool) -> Void)?
-
-    
     lazy private var cachedCellWidths: [CGFloat]? = { [unowned self] in
         return self.calculateWidths()
         }()

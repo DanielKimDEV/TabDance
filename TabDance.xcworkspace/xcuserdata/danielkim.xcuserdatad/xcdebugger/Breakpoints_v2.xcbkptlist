@@ -94,8 +94,8 @@
             filePath = "Source/Sources/TabDanceViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "updateIndicator(for:fromIndex:toIndex:indexWasChanged:)"
             landmarkType = "7">
          </BreakpointContent>
