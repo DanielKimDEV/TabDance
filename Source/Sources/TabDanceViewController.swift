@@ -136,14 +136,7 @@ open class TabDanceViewController: UIPageViewController {
         view.addSubview(pagerBar)
         
         pagerBar.translatesAutoresizingMaskIntoConstraints = false
-        
-        //            let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
-        
-        let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
-        //
-        //            self.view.frame = CGRect(x: 0, y: navigationBarHeight, width: self.view.frame.width, height: self.view.bounds.height - navigationBarHeight)
-        
-        
+            
         self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
         
         self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0))
@@ -203,7 +196,6 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.item != settings.contentStyle.currentIndex else { return }
         
         pagerBar.moveTo(index: indexPath.item, animated: true, pagerScroll: .yes)
         shouldUpdatepagerBarView = false
