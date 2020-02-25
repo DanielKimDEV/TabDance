@@ -34,7 +34,6 @@ open class TabDanceViewController: UIPageViewController {
         }
         set {
             presentIndex = newValue
-            print("index change \(presentIndex)")
         }
     }
     private var pastIndex = 0
@@ -81,7 +80,6 @@ open class TabDanceViewController: UIPageViewController {
     
     override open func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        print("view Did Layout Subvies")
         
         guard isViewAppearing else { return }
         
@@ -257,7 +255,6 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
         }
         
         if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {
-            print("check1 \(indexPath.item)")
             changeCurrentIndexProgressive(self.pastIndex == indexPath.item ? nil : cell, self.presentVisibleIndex == indexPath.item ? cell : nil, 1, true, false)
         }
      
