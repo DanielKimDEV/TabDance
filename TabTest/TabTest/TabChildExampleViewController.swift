@@ -7,10 +7,10 @@
 //
 
 import Foundation
-import TabDance
 import UIKit
 
 class EmojiReactionMemberTableViewController: UITableViewController, IndicatorInfoProvider {
+    
     var tabDanceBarHeight: CGFloat = 38
 
     let cellIdentifier = "Cell"
@@ -68,7 +68,7 @@ class EmojiReactionMemberTableViewController: UITableViewController, IndicatorIn
 
     // IndicatorInfoProvider
 
-    func indicatorInfo(for pagerTabStripController: TabDanceViewController) -> TabIndicatorInfo {
+    func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorInfo {
         return itemInfo
     }
 

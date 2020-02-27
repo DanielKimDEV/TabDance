@@ -1,32 +1,35 @@
 //
-//  TabDanceViewController.swift
-//  TabDance
+//  BasePagerViewController.swift
+//  BizTalk iOS
 //
-//  Created by Daniel Kim on 2020/02/24.
-//  Copyright © 2020 Daniel Kim. All rights reserved.
+//  Created by Daniel Kim on 2020/02/25.
+//  Copyright © 2020 wade.hawk. All rights reserved.
 //
 
 import Foundation
 import UIKit
+import RxSwift
 
 //Todo - 뷰가 회전 할때는 고려 하지 않음, 뷰 회전 할때 다시 잡아 주는 동작 필요함.
-open class TabDanceViewController: UIPageViewController {
+class BasePagerViewController: UIPageViewController {
     
     // Attributes
-    internal var isViewAppearing = false
-    internal var isViewRotating = false
     private var shouldUpdatepagerBarView = true
     private var collectionViewDidLoad = false
     private var lastContentOffset: CGFloat = 0.0
     private var pageBeforeRotate = 0
     private var lastSize = CGSize(width: 0, height: 0)
-    public var pagerBarItemSpec: PagerBarItemSpec<PagerBarViewCell>!
-    open var settings = TabDanceSettings()
     private var shouldUpdateButtonBarView = true
-
-    var pendingPage:Int?
+    
+    var settings = BasePagerSettings()
+    var pagerBarItemSpec: PagerBarItemSpec<BasePagerViewCell>!
+    
+    var disposeBag: DisposeBag = DisposeBag()
+    
+    
+    private var pendingPage: Int?
     private var presentIndex = 0
-    var presentVisibleIndex:Int {
+    private var presentVisibleIndex:Int {
         get {
             return self.presentIndex
         }
@@ -38,12 +41,13 @@ open class TabDanceViewController: UIPageViewController {
     }
     private var pastIndex = 0
     
-    open lazy var arrViewControllers = [UIViewController]()
+    lazy var arrViewControllers = [UIViewController]()
     
     // Views
-    var pagerBar: PagerBarView!
-    public var changeCurrentIndex: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ animated: Bool) -> Void)?
-    public var changeCurrentIndexProgressive: ((_ oldCell: PagerBarViewCell?, _ newCell: PagerBarViewCell?, _ progressPercentage: CGFloat, _ changeCurrentIndex: Bool, _ animated: Bool) -> Void)?
+    var pagerBar: BasePagerBarView!
+
+    var changeCurrentIndexProgressive: ((_ oldCell: BasePagerViewCell?, _ newCell: BasePagerViewCell?, _ progressPercentage: CGFloat, _ changeCurrentIndex: Bool, _ animated: Bool) -> Void)?
+    
     lazy private var cachedCellWidths: [CGFloat]? = { [unowned self] in
         return self.calculateWidths()
         }()
@@ -52,36 +56,40 @@ open class TabDanceViewController: UIPageViewController {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: options)
     }
     
-    required public init?(coder: NSCoder) {
+    required init?(coder: NSCoder) {
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
     }
     
-    override open func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         setViews()
         setStyling()
     }
     
-    open override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         pagerBar.layoutIfNeeded()
-        isViewAppearing = true
+
     }
     
-    open override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        isViewAppearing = false
+
     }
     
-    override open func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         print("view Did Layout Subvies")
-        guard isViewAppearing else { return }
-        
-        cachedCellWidths = calculateWidths()
-        pagerBar.collectionViewLayout.invalidateLayout()
-        pagerBar.moveTo(index: presentVisibleIndex, animated: false, pagerScroll: .scrollOnlyIfOutOfScreen)
-        pagerBar.selectItem(at: IndexPath(item: presentVisibleIndex, section: 0), animated: false, scrollPosition: [])
+
+        rx.viewDidAppear.take(1).map { _ in }
+            .subscribe(onNext: { [weak self] in
+                self?.cachedCellWidths = self?.calculateWidths()
+                self?.pagerBar.collectionViewLayout.invalidateLayout()
+                self?.pagerBar.moveTo(index: self!.presentVisibleIndex, animated: false, pagerScroll: .scrollOnlyIfOutOfScreen)
+                self?.pagerBar.selectItem(at: IndexPath(item: self!.presentVisibleIndex, section: 0), animated: false, scrollPosition: [])
+            })
+            .disposed(by: disposeBag)
+
     }
     
     func setViews() {
@@ -124,7 +132,7 @@ open class TabDanceViewController: UIPageViewController {
         flowLayout.minimumInteritemSpacing = self.settings.barStyle.tabDanceMinimumInteritemSpacing ?? flowLayout.minimumInteritemSpacing
         flowLayout.minimumLineSpacing = self.settings.barStyle.tabDanceMinimumLineSpacing ?? flowLayout.minimumLineSpacing
         
-        pagerBar = PagerBarView(frame: .zero, collectionViewLayout: flowLayout)
+        pagerBar = BasePagerBarView(frame: .zero, collectionViewLayout: flowLayout)
         view.addSubview(pagerBar)
         
         pagerBar.translatesAutoresizingMaskIntoConstraints = false
@@ -139,14 +147,14 @@ open class TabDanceViewController: UIPageViewController {
         pagerBar.selectedBarHeight = self.settings.barStyle.selectedBarHeight
         pagerBar.selectedBarVerticalAlignment = self.settings.barStyle.selectedBarVerticalAlignment
         
-        pagerBar.register(PagerBarViewCell.self, forCellWithReuseIdentifier:"Cell")
+        pagerBar.register(BasePagerViewCell.self, forCellWithReuseIdentifier:"Cell")
     }
 }
 
-extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    // MARK: - Public Methods
+extension BasePagerViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    // MARK: - Methods
     
-    open func moveToViewController(at index: Int, animated: Bool = true) {
+     func moveToViewController(at index: Int, animated: Bool = true) {
         let selectedVC = arrViewControllers[index]
         setViewControllers([selectedVC], direction: index > self.pastIndex ? .forward : .reverse, animated: true, completion: nil)
         pastIndex = presentVisibleIndex
@@ -154,8 +162,8 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
         updateIndicator(for: self, fromIndex: pastIndex, toIndex: presentVisibleIndex,  indexWasChanged: true)
     }
     
-    private func cellForItems(at indexPaths: [IndexPath], reloadIfNotVisible reload: Bool = true) -> [PagerBarViewCell?] {
-        let cells = indexPaths.map { pagerBar.cellForItem(at: $0) as? PagerBarViewCell }
+    private func cellForItems(at indexPaths: [IndexPath], reloadIfNotVisible reload: Bool = true) -> [BasePagerViewCell?] {
+        let cells = indexPaths.map { pagerBar.cellForItem(at: $0) as? BasePagerViewCell }
         
         if reload {
             let indexPathsToReload = cells.enumerated()
@@ -174,7 +182,7 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
         return cells
     }
 
-    open func updateIndicator(for viewController: TabDanceViewController, fromIndex: Int, toIndex: Int, indexWasChanged: Bool) {
+    func updateIndicator(for viewController: BasePagerViewController, fromIndex: Int, toIndex: Int, indexWasChanged: Bool) {
         guard shouldUpdateButtonBarView else { return }
         
             let oldIndexPath = IndexPath(item: presentVisibleIndex != fromIndex ? fromIndex : toIndex, section: 0)
@@ -188,14 +196,14 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
     
     // MARK: - UICollectionViewDelegateFlowLayut
     
-    @objc open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    @objc func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let cellWidthValue = cachedCellWidths?[indexPath.row] else {
             fatalError("cachedCellWidths for \(indexPath.row) must not be nil")
         }
         return CGSize(width: cellWidthValue, height: collectionView.frame.size.height)
     }
     
-    open func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("update index \(indexPath.item)")
         pagerBar.moveTo(index: indexPath.item, animated: true, pagerScroll: .yes)
         shouldUpdatepagerBarView = false
@@ -216,12 +224,12 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
     
     // MARK: - UICollectionViewDataSource
     
-    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrViewControllers.count
     }
     
-    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PagerBarViewCell else {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? BasePagerViewCell else {
             fatalError("UICollectionViewCell should be or extend from PagerBarViewCell")
         }
         
@@ -246,10 +254,10 @@ extension TabDanceViewController: UICollectionViewDataSource, UICollectionViewDe
 }
 
 
-extension TabDanceViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
+extension BasePagerViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     
-    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         guard completed, let page = pendingPage else {
             return
         }
@@ -258,13 +266,13 @@ extension TabDanceViewController: UIPageViewControllerDataSource, UIPageViewCont
         updateIndicator(for: self, fromIndex: pastIndex, toIndex: presentVisibleIndex,  indexWasChanged: true)
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController,
+    func pageViewController(_ pageViewController: UIPageViewController,
                                    willTransitionTo pendingViewControllers: [UIViewController]) {
         pendingPage = self.arrViewControllers.firstIndex(of: pendingViewControllers.first!)
     }
     
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore PageViewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore PageViewController: UIViewController) -> UIViewController? {
         
         guard let vcIndex = arrViewControllers.firstIndex(of: PageViewController) else {
             return nil
@@ -279,7 +287,7 @@ extension TabDanceViewController: UIPageViewControllerDataSource, UIPageViewCont
         return arrViewControllers[previousIndex]
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter PageViewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter PageViewController: UIViewController) -> UIViewController? {
         guard let vcIndex = arrViewControllers.firstIndex(of: PageViewController) else {
             return nil
         }
@@ -298,14 +306,14 @@ extension TabDanceViewController: UIPageViewControllerDataSource, UIPageViewCont
 
 
 // MARK - Helpers, CaculateWidth
-extension TabDanceViewController {
-    
+extension BasePagerViewController {
+     
     private func calculateWidths() -> [CGFloat] {
         let flowLayout = pagerBar.collectionViewLayout as! UICollectionViewFlowLayout // swiftlint:disable:this force_cast
         let numberOfCells = arrViewControllers.count
         
         var minimumCellWidths = [CGFloat]()
-        var collectionViewContentWidth: CGFloat = 0
+        var contentWidth: CGFloat = 0
         
         for viewController in arrViewControllers {
             let childController = viewController as! IndicatorInfoProvider // swiftlint:disable:this force_cast
@@ -314,19 +322,19 @@ extension TabDanceViewController {
             case .cellClass(let widthCallback):
                 let width = widthCallback(indicatorInfo)
                 minimumCellWidths.append(width)
-                collectionViewContentWidth += width
+                contentWidth += width
             }
         }
         
         let cellSpacingTotal = CGFloat(numberOfCells - 1) * flowLayout.minimumLineSpacing
-        collectionViewContentWidth += cellSpacingTotal
+        contentWidth += cellSpacingTotal
         
-        let collectionViewAvailableVisibleWidth = pagerBar.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
+        let availableVisibleWidth = pagerBar.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
         
-        if !self.settings.barStyle.tabDanceItemsShouldFillAvailableWidth || collectionViewAvailableVisibleWidth < collectionViewContentWidth {
+        if !self.settings.barStyle.tabDanceItemsShouldFillAvailableWidth || availableVisibleWidth < contentWidth {
             return minimumCellWidths
         } else {
-            let stretchedCellWidthIfAllEqual = (collectionViewAvailableVisibleWidth - cellSpacingTotal) / CGFloat(numberOfCells)
+            let stretchedCellWidthIfAllEqual = (availableVisibleWidth - cellSpacingTotal) / CGFloat(numberOfCells)
             let generalMinimumCellWidth = calculateStretchedCellWidths(minimumCellWidths, suggestedStretchedCellWidth: stretchedCellWidthIfAllEqual, previousNumberOfLargeCells: 0)
             var stretchedCellWidths = [CGFloat]()
             
@@ -339,7 +347,7 @@ extension TabDanceViewController {
         }
     }
     
-    open func calculateStretchedCellWidths(_ minimumCellWidths: [CGFloat], suggestedStretchedCellWidth: CGFloat, previousNumberOfLargeCells: Int) -> CGFloat {
+    func calculateStretchedCellWidths(_ minimumCellWidths: [CGFloat], suggestedStretchedCellWidth: CGFloat, previousNumberOfLargeCells: Int) -> CGFloat {
         var numberOfLargeCells = 0
         var totalWidthOfLargeCells: CGFloat = 0
         
@@ -351,12 +359,12 @@ extension TabDanceViewController {
         guard numberOfLargeCells > previousNumberOfLargeCells else { return suggestedStretchedCellWidth }
         
         let flowLayout = pagerBar.collectionViewLayout as! UICollectionViewFlowLayout // swiftlint:disable:this force_cast
-        let collectionViewAvailiableWidth = pagerBar.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
+        let availiableWidth = pagerBar.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
         let numberOfCells = minimumCellWidths.count
         let cellSpacingTotal = CGFloat(numberOfCells - 1) * flowLayout.minimumLineSpacing
         
         let numberOfSmallCells = numberOfCells - numberOfLargeCells
-        let newSuggestedStretchedCellWidth = (collectionViewAvailiableWidth - totalWidthOfLargeCells - cellSpacingTotal) / CGFloat(numberOfSmallCells)
+        let newSuggestedStretchedCellWidth = (availiableWidth - totalWidthOfLargeCells - cellSpacingTotal) / CGFloat(numberOfSmallCells)
         
         return calculateStretchedCellWidths(minimumCellWidths, suggestedStretchedCellWidth: newSuggestedStretchedCellWidth, previousNumberOfLargeCells: numberOfLargeCells)
     }

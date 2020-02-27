@@ -14,27 +14,20 @@
 		ABC9EA7323FE968D00C6C07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA7223FE968D00C6C07F /* ViewController.swift */; };
 		ABC9EA7823FE968F00C6C07F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABC9EA7723FE968F00C6C07F /* Assets.xcassets */; };
 		ABC9EA7B23FE968F00C6C07F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC9EA7923FE968F00C6C07F /* LaunchScreen.storyboard */; };
-		ABC9EA8D23FE972B00C6C07F /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; };
-		ABC9EA8E23FE972B00C6C07F /* TabDance.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ABC9EA8C23FE972B00C6C07F /* TabDance.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		ABC9EA9323FED3C600C6C07F /* TabChildExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */; };
 		ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9523FED40200C6C07F /* Cell.swift */; };
 		ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA9723FED6C800C6C07F /* DataProvider.swift */; };
+		ABD8BBA12406639F001739CE /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA02406639F001739CE /* RxSwift */; };
+		ABD8BBA52406639F001739CE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA42406639F001739CE /* RxRelay */; };
+		ABD8BBA72406639F001739CE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA62406639F001739CE /* RxCocoa */; };
+		ABD8BBA92406639F001739CE /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA82406639F001739CE /* RxBlocking */; };
+		ABD8BBC824068005001739CE /* TabIndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */; };
+		ABD8BBCA24068147001739CE /* BasePagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBC924068147001739CE /* BasePagerBarView.swift */; };
+		ABD8BBCC24068183001739CE /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */; };
+		ABD8BBCE240681BB001739CE /* BasePagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */; };
+		ABD8BBD0240681DB001739CE /* BasePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBCF240681DB001739CE /* BasePagerViewController.swift */; };
 		ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA2703240424CE00430334 /* TabExampleViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		ABC9EA8F23FE972C00C6C07F /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				ABC9EA8E23FE972B00C6C07F /* TabDance.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ABC9EA6B23FE968D00C6C07F /* TabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +37,14 @@
 		ABC9EA7723FE968F00C6C07F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABC9EA7A23FE968F00C6C07F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABC9EA7C23FE968F00C6C07F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABC9EA8C23FE972B00C6C07F /* TabDance.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabDance.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabChildExampleViewController.swift; sourceTree = "<group>"; };
 		ABC9EA9523FED40200C6C07F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABC9EA9723FED6C800C6C07F /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorInfo.swift; sourceTree = "<group>"; };
+		ABD8BBC924068147001739CE /* BasePagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerBarView.swift; sourceTree = "<group>"; };
+		ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
+		ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerSettings.swift; sourceTree = "<group>"; };
+		ABD8BBCF240681DB001739CE /* BasePagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerViewController.swift; sourceTree = "<group>"; };
 		ABFA2703240424CE00430334 /* TabExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabExampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,8 +53,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD8BBA52406639F001739CE /* RxRelay in Frameworks */,
 				AB80112C2404F6E2005593E2 /* Kingfisher in Frameworks */,
-				ABC9EA8D23FE972B00C6C07F /* TabDance.framework in Frameworks */,
+				ABD8BBA72406639F001739CE /* RxCocoa in Frameworks */,
+				ABD8BBA92406639F001739CE /* RxBlocking in Frameworks */,
+				ABD8BBA12406639F001739CE /* RxSwift in Frameworks */,
 				AB8011292404F6B3005593E2 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +85,7 @@
 		ABC9EA6D23FE968D00C6C07F /* TabTest */ = {
 			isa = PBXGroup;
 			children = (
+				ABD8BBAA24067C8E001739CE /* Lib */,
 				ABC9EA9423FED3EB00C6C07F /* Common */,
 				ABC9EA6E23FE968D00C6C07F /* AppDelegate.swift */,
 				ABC9EA7023FE968D00C6C07F /* SceneDelegate.swift */,
@@ -101,7 +102,6 @@
 		ABC9EA8B23FE972B00C6C07F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				ABC9EA8C23FE972B00C6C07F /* TabDance.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +115,18 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		ABD8BBAA24067C8E001739CE /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				ABD8BBC924068147001739CE /* BasePagerBarView.swift */,
+				ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */,
+				ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */,
+				ABD8BBCF240681DB001739CE /* BasePagerViewController.swift */,
+				ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,7 +137,6 @@
 				ABC9EA6723FE968D00C6C07F /* Sources */,
 				ABC9EA6823FE968D00C6C07F /* Frameworks */,
 				ABC9EA6923FE968D00C6C07F /* Resources */,
-				ABC9EA8F23FE972C00C6C07F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +146,10 @@
 			packageProductDependencies = (
 				AB8011282404F6B3005593E2 /* SnapKit */,
 				AB80112B2404F6E2005593E2 /* Kingfisher */,
+				ABD8BBA02406639F001739CE /* RxSwift */,
+				ABD8BBA42406639F001739CE /* RxRelay */,
+				ABD8BBA62406639F001739CE /* RxCocoa */,
+				ABD8BBA82406639F001739CE /* RxBlocking */,
 			);
 			productName = TabTest;
 			productReference = ABC9EA6B23FE968D00C6C07F /* TabTest.app */;
@@ -167,6 +182,7 @@
 			packageReferences = (
 				AB8011272404F6B3005593E2 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				AB80112A2404F6E2005593E2 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = ABC9EA6C23FE968D00C6C07F /* Products */;
 			projectDirPath = "";
@@ -198,8 +214,13 @@
 				ABC9EA7323FE968D00C6C07F /* ViewController.swift in Sources */,
 				ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */,
 				ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */,
+				ABD8BBC824068005001739CE /* TabIndicatorInfo.swift in Sources */,
 				ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */,
 				ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */,
+				ABD8BBCA24068147001739CE /* BasePagerBarView.swift in Sources */,
+				ABD8BBCC24068183001739CE /* BasePagerViewCell.swift in Sources */,
+				ABD8BBCE240681BB001739CE /* BasePagerSettings.swift in Sources */,
+				ABD8BBD0240681DB001739CE /* BasePagerViewController.swift in Sources */,
 				ABC9EA9623FED40200C6C07F /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -408,6 +429,14 @@
 				minimumVersion = 5.13.1;
 			};
 		};
+		ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -420,6 +449,26 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AB80112A2404F6E2005593E2 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		ABD8BBA02406639F001739CE /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		ABD8BBA42406639F001739CE /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		ABD8BBA62406639F001739CE /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		ABD8BBA82406639F001739CE /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ABD8BB9F2406639F001739CE /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

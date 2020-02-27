@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		AB3FD30A23FE5CBA00B5B37D /* TabDance.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB3FD30023FE5CBA00B5B37D /* TabDance.framework */; };
 		AB3FD30F23FE5CBA00B5B37D /* TabDanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */; };
-		ABC9EA2923FE72F700C6C07F /* TabIndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */; };
-		ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */; };
-		ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */; };
-		ABFA26F82403907500430334 /* TabDanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26F72403907500430334 /* TabDanceViewController.swift */; };
-		ABFA26FF2404145700430334 /* TabDanceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFA26FE2404145700430334 /* TabDanceSettings.swift */; };
+		ABD8BB8F240659CC001739CE /* BasePagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BB8924065337001739CE /* BasePagerBarView.swift */; };
+		ABD8BB90240659CC001739CE /* BasePagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BB8824065337001739CE /* BasePagerSettings.swift */; };
+		ABD8BB91240659CC001739CE /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BB8724065337001739CE /* BasePagerViewCell.swift */; };
+		ABD8BB92240659CC001739CE /* BasePagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BB8624065337001739CE /* BasePagerViewController.swift */; };
+		ABD8BB93240659CC001739CE /* TabIndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BB8524065337001739CE /* TabIndicatorInfo.swift */; };
 		ABFA27262404F55200430334 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABFA27242404F55200430334 /* Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -32,11 +32,11 @@
 		AB3FD30923FE5CBA00B5B37D /* TabDanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TabDanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB3FD30E23FE5CBA00B5B37D /* TabDanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceTests.swift; sourceTree = "<group>"; };
 		AB3FD31023FE5CBA00B5B37D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorInfo.swift; sourceTree = "<group>"; };
-		ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarView.swift; sourceTree = "<group>"; };
-		ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerBarViewCell.swift; sourceTree = "<group>"; };
-		ABFA26F72403907500430334 /* TabDanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceViewController.swift; sourceTree = "<group>"; };
-		ABFA26FE2404145700430334 /* TabDanceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabDanceSettings.swift; sourceTree = "<group>"; };
+		ABD8BB8524065337001739CE /* TabIndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorInfo.swift; sourceTree = "<group>"; };
+		ABD8BB8624065337001739CE /* BasePagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerViewController.swift; sourceTree = "<group>"; };
+		ABD8BB8724065337001739CE /* BasePagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
+		ABD8BB8824065337001739CE /* BasePagerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerSettings.swift; sourceTree = "<group>"; };
+		ABD8BB8924065337001739CE /* BasePagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerBarView.swift; sourceTree = "<group>"; };
 		ABFA27242404F55200430334 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -91,11 +91,11 @@
 		ABC9EA1523FE72F700C6C07F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				ABC9EA1A23FE72F700C6C07F /* TabIndicatorInfo.swift */,
-				ABC9EA1C23FE72F700C6C07F /* PagerBarView.swift */,
-				ABC9EA1F23FE72F700C6C07F /* PagerBarViewCell.swift */,
-				ABFA26F72403907500430334 /* TabDanceViewController.swift */,
-				ABFA26FE2404145700430334 /* TabDanceSettings.swift */,
+				ABD8BB8924065337001739CE /* BasePagerBarView.swift */,
+				ABD8BB8824065337001739CE /* BasePagerSettings.swift */,
+				ABD8BB8724065337001739CE /* BasePagerViewCell.swift */,
+				ABD8BB8624065337001739CE /* BasePagerViewController.swift */,
+				ABD8BB8524065337001739CE /* TabIndicatorInfo.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -281,11 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABC9EA2B23FE72F700C6C07F /* PagerBarView.swift in Sources */,
-				ABC9EA2E23FE72F700C6C07F /* PagerBarViewCell.swift in Sources */,
-				ABFA26FF2404145700430334 /* TabDanceSettings.swift in Sources */,
-				ABFA26F82403907500430334 /* TabDanceViewController.swift in Sources */,
-				ABC9EA2923FE72F700C6C07F /* TabIndicatorInfo.swift in Sources */,
+				ABD8BB8F240659CC001739CE /* BasePagerBarView.swift in Sources */,
+				ABD8BB90240659CC001739CE /* BasePagerSettings.swift in Sources */,
+				ABD8BB91240659CC001739CE /* BasePagerViewCell.swift in Sources */,
+				ABD8BB92240659CC001739CE /* BasePagerViewController.swift in Sources */,
+				ABD8BB93240659CC001739CE /* TabIndicatorInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +431,7 @@
 		AB3FD31523FE5CBA00B5B37D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BDR4FLH765;
@@ -458,7 +458,7 @@
 		AB3FD31623FE5CBA00B5B37D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = BDR4FLH765;

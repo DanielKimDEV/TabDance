@@ -9,9 +9,8 @@
 import Foundation
 import UIKit
 import SnapKit
-import TabDance
 
-class TabExampleViewController : TabDanceViewController {
+class TabExampleViewController : BasePagerViewController {
     
     
     override func viewDidLoad() {
@@ -34,7 +33,7 @@ class TabExampleViewController : TabDanceViewController {
         self.navigationItem.setLeftBarButton(closeButton, animated: true)
         
         changeCurrentIndexProgressive = {
-            (oldCell: PagerBarViewCell?, newCell: PagerBarViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
+            (oldCell: BasePagerViewCell?, newCell: BasePagerViewCell?, progressPercentage: CGFloat, changeCurrentIndex: Bool, animated: Bool) -> Void in
                guard changeCurrentIndex == true else { return }
             oldCell?.label.textColor = .gray
             newCell?.label.textColor = .black

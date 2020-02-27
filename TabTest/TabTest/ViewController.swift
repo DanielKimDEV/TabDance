@@ -8,7 +8,22 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
+extension Reactive where Base: UIViewController {
+    var viewDidLoad: Observable<[Any]> {
+        return sentMessage(#selector(UIViewController.viewDidLoad))
+    }
+    var viewWillAppear: Observable<[Any]> {
+        return sentMessage(#selector(UIViewController.viewWillAppear(_:)))
+    }
+    
+    var viewDidAppear: Observable<[Any]> {
+        return sentMessage(#selector(UIViewController.viewDidAppear(_:)))
+    }
+    
+}
 class ViewController: UIViewController {
 
     var button: UIButton!

@@ -4,7 +4,4 @@
    <FileRef
       location = "group:TabTest/TabTest.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Source/TabDance.xcodeproj">
-   </FileRef>
 </Workspace>

@@ -1,4 +1,4 @@
-//  pagerBarViewCell.swift
+//  BasePagerViewCell.swift
 //
 //  Created by Daniel Kim on 2020/02/20.
 //  Copyright © 2020 Daniel Kim. All rights reserved.
@@ -7,10 +7,10 @@
 import UIKit
 import Foundation
 
-open class PagerBarViewCell: UICollectionViewCell {
+class BasePagerViewCell: UICollectionViewCell {
     
-    open var label: UILabel = {
-       return UILabel()
+    var label: UILabel = {
+        return UILabel()
     }()
     
     override init(frame: CGRect) {
@@ -25,7 +25,7 @@ open class PagerBarViewCell: UICollectionViewCell {
         accessibilityTraits.insert([.button, .header])
     }
     
-    open override var isSelected: Bool {
+    override var isSelected: Bool {
         get {
             return super.isSelected
         }
@@ -38,7 +38,7 @@ open class PagerBarViewCell: UICollectionViewCell {
             }
         }
     }
-
+    
     
     private func setupViews() {
         self.addSubview(label)

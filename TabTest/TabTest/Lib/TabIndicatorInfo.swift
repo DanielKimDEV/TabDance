@@ -8,7 +8,7 @@ import Foundation
 import UIKit
 
 struct TabIndicatorInfo {
-
+    
     var title: String?
     var highlightedImage: UIImage?
     var accessibilityLabel: String?
@@ -22,7 +22,7 @@ struct TabIndicatorInfo {
     init(title: String?, userInfo: Any? = nil) {
         self.title = title
         self.accessibilityLabel = title
-   
+        
         self.userInfo = userInfo
     }
     
@@ -34,17 +34,17 @@ struct TabIndicatorInfo {
 }
 
 extension TabIndicatorInfo : ExpressibleByStringLiteral {
-
+    
     init(stringLiteral value: String) {
         title = value
         accessibilityLabel = value
     }
-
+    
     init(extendedGraphemeClusterLiteral value: String) {
         title = value
         accessibilityLabel = value
     }
-
+    
     init(unicodeScalarLiteral value: String) {
         title = value
         accessibilityLabel = value
