@@ -52,14 +52,8 @@ struct BasePagerSettings {
 
 protocol IndicatorInfoProvider: UIViewController {
     func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorInfo
-    var tabDanceBarHeight:CGFloat { get set }
 }
 
-extension IndicatorInfoProvider {
-    func setTableViewTopInsets(tableView:UITableView) {
-        tableView.contentInset = UIEdgeInsets(top: tabDanceBarHeight, left: 0, bottom: 0, right: 0)
-    }
-}
 
 enum PagerBarItemSpec<CellType: UICollectionViewCell> {
     case cellClass(width:((TabIndicatorInfo)-> CGFloat))
@@ -69,4 +63,50 @@ enum PagerBarItemSpec<CellType: UICollectionViewCell> {
             return widthCallback
         }
     }
+}
+
+enum PagerTabStripBehaviour {
+
+    case common(skipIntermediateViewControllers: Bool)
+    case progressive(skipIntermediateViewControllers: Bool, elasticIndicatorLimit: Bool)
+
+    public var skipIntermediateViewControllers: Bool {
+        switch self {
+        case .common(let skipIntermediateViewControllers):
+            return skipIntermediateViewControllers
+        case .progressive(let skipIntermediateViewControllers, _):
+            return skipIntermediateViewControllers
+        }
+    }
+
+    public var isProgressiveIndicator: Bool {
+        switch self {
+        case .common:
+            return false
+        case .progressive:
+            return true
+        }
+    }
+
+    public var isElasticIndicatorLimit: Bool {
+        switch self {
+        case .common:
+            return false
+        case .progressive(_, let elasticIndicatorLimit):
+            return elasticIndicatorLimit
+        }
+    }
+}
+
+
+enum SwipeDirection {
+    case left
+    case right
+    case none
+}
+
+enum PagerTabStripError: Error {
+
+    case viewControllerOutOfBounds
+
 }

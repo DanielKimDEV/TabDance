@@ -92,9 +92,9 @@ class BasePagerBarView: UICollectionView {
         self.addConstraint(NSLayoutConstraint(item: underLineView, attribute: .bottom, relatedBy: .equal, toItem: self.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: -1))
     }
     
-    func moveTo(index: Int, animated: Bool, pagerScroll: PagerScroll) {
+    open func moveTo(index: Int, animated: Bool, swipeDirection: SwipeDirection, pagerScroll: PagerScroll) {
         selectedIndex = index
-        updateSelectedBarPosition(animated, pagerScroll: pagerScroll)
+        updateSelectedBarPosition(    animated, swipeDirection: swipeDirection, pagerScroll: pagerScroll)
     }
     
     func move(fromIndex: Int, toIndex: Int, progressPercentage: CGFloat, pagerScroll: PagerScroll) {
@@ -135,19 +135,19 @@ class BasePagerBarView: UICollectionView {
         setContentOffset(CGPoint(x: targetContentOffset, y: 0), animated: false)
     }
     
-    func updateSelectedBarPosition(_ animated: Bool, pagerScroll: PagerScroll) {
+    open func updateSelectedBarPosition(_ animated: Bool, swipeDirection: SwipeDirection, pagerScroll: PagerScroll) {
         var selectedBarFrame = selectedBar.frame
-        
+
         let selectedCellIndexPath = IndexPath(item: selectedIndex, section: 0)
         let attributes = layoutAttributesForItem(at: selectedCellIndexPath)
-        
+
         let selectedCellFrame = attributes!.frame
-        
+
         updateContentOffset(animated: animated, pagerScroll: pagerScroll, toFrame: selectedCellFrame, toIndex: (selectedCellIndexPath as NSIndexPath).row)
-        
+
         selectedBarFrame.size.width = selectedCellFrame.size.width
         selectedBarFrame.origin.x = selectedCellFrame.origin.x
-        
+
         if animated {
             UIView.animate(withDuration: 0.3, animations: { [weak self] in
                 self?.selectedBar.frame = selectedBarFrame

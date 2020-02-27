@@ -11,7 +11,7 @@ import UIKit
 
 class EmojiReactionMemberTableViewController: UITableViewController, IndicatorInfoProvider {
     
-    var tabDanceBarHeight: CGFloat = 38
+
 
     let cellIdentifier = "Cell"
 
@@ -34,8 +34,6 @@ class EmojiReactionMemberTableViewController: UITableViewController, IndicatorIn
         tableView.rowHeight = UITableView.automaticDimension
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
-        
-        setTableViewTopInsets(tableView: tableView)
     }
 
     override func viewWillAppear(_ animated: Bool) {

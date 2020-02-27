@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB31D5E22407539A00DD37C2 /* BasePagerStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB31D5E12407539A00DD37C2 /* BasePagerStripViewController.swift */; };
 		AB8011292404F6B3005593E2 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AB8011282404F6B3005593E2 /* SnapKit */; };
 		AB80112C2404F6E2005593E2 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AB80112B2404F6E2005593E2 /* Kingfisher */; };
 		ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC9EA6E23FE968D00C6C07F /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB31D5E12407539A00DD37C2 /* BasePagerStripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePagerStripViewController.swift; sourceTree = "<group>"; };
 		ABC9EA6B23FE968D00C6C07F /* TabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC9EA6E23FE968D00C6C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC9EA7023FE968D00C6C07F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */,
 				ABD8BBCF240681DB001739CE /* BasePagerViewController.swift */,
 				ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */,
+				AB31D5E12407539A00DD37C2 /* BasePagerStripViewController.swift */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				ABC9EA7323FE968D00C6C07F /* ViewController.swift in Sources */,
 				ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */,
 				ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */,
+				AB31D5E22407539A00DD37C2 /* BasePagerStripViewController.swift in Sources */,
 				ABD8BBC824068005001739CE /* TabIndicatorInfo.swift in Sources */,
 				ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */,
 				ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */,
