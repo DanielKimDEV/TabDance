@@ -10,19 +10,17 @@ import Foundation
 import UIKit
 // MARK: Protocols
 
-
-
-protocol PagerTabStripDelegate: class {
+protocol BasePagerTabStripDelegate: class {
     
     func updateIndicator(for viewController: BasePagerStripViewController, fromIndex: Int, toIndex: Int)
 }
 
-protocol PagerTabStripIsProgressiveDelegate: PagerTabStripDelegate {
+protocol BasePagerTabStripIsProgressiveDelegate: BasePagerTabStripDelegate {
     
     func updateIndicator(for viewController: BasePagerStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool)
 }
 
-protocol PagerTabStripDataSource: class {
+protocol BasePagerTabStripDataSource: class {
     
     func viewControllers(for pagerTabStripController: BasePagerStripViewController) -> [UIViewController]
 }
@@ -33,8 +31,8 @@ class BasePagerStripViewController: UIViewController, UIScrollViewDelegate {
     
     var containerView: UIScrollView!
     var pagerBarHeight:CGFloat = 0
-    weak var delegate: PagerTabStripDelegate?
-    weak var datasource: PagerTabStripDataSource?
+    weak var delegate: BasePagerTabStripDelegate?
+    weak var datasource: BasePagerTabStripDataSource?
     var topTableViewPadding:CGFloat = 24
     var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
     
@@ -254,7 +252,7 @@ class BasePagerStripViewController: UIViewController, UIScrollViewDelegate {
         preCurrentIndex = currentIndex
         let changeCurrentIndex = newCurrentIndex != oldCurrentIndex
         
-        if let progressiveDelegate = self as? PagerTabStripIsProgressiveDelegate, pagerBehaviour.isProgressiveIndicator {
+        if let progressiveDelegate = self as? BasePagerTabStripIsProgressiveDelegate, pagerBehaviour.isProgressiveIndicator {
             
             let (fromIndex, toIndex, scrollPercentage) = progressiveIndicatorData(virtualPage)
             progressiveDelegate.updateIndicator(for: self, fromIndex: fromIndex, toIndex: toIndex, withProgressPercentage: scrollPercentage, indexWasChanged: changeCurrentIndex)

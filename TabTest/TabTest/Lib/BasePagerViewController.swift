@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 import RxSwift
 
-//Todo - 뷰가 회전 할때는 고려 하지 않음, 뷰 회전 할때 다시 잡아 주는 동작 필요함.
-class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+
+class BasePagerViewController: BasePagerStripViewController, BasePagerTabStripDataSource, BasePagerTabStripIsProgressiveDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     var settings = BasePagerSettings()
     
     var pagerBarItemSpec: PagerBarItemSpec<BasePagerViewCell>!
@@ -53,7 +53,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
             let flowLayout = UICollectionViewFlowLayout()
             
             flowLayout.scrollDirection = .horizontal
-            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: settings.barStyle.tabLeftContentInset ?? 0, bottom: 0, right: settings.barStyle.tabRightContentInset ?? 0)
+            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: settings.barStyle.tabLeftContentInset , bottom: 0, right: settings.barStyle.tabRightContentInset )
             
             flowLayout.scrollDirection = .horizontal
             flowLayout.minimumInteritemSpacing = settings.barStyle.tabMinimumInteritemSpacing ?? flowLayout.minimumInteritemSpacing
@@ -67,7 +67,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
             //후에 바텀라인 지우는거 만들것
             
             let sectionInset = flowLayout.sectionInset
-            flowLayout.sectionInset = UIEdgeInsets(top: sectionInset.top, left: settings.barStyle.tabLeftContentInset  ?? sectionInset.left, bottom: sectionInset.bottom, right: settings.barStyle.tabRightContentInset  ?? sectionInset.right)
+            flowLayout.sectionInset = UIEdgeInsets(top: sectionInset.top, left: settings.barStyle.tabLeftContentInset  , bottom: sectionInset.bottom, right: settings.barStyle.tabRightContentInset  )
             return pagerBar
             }()
         pagerBar = BasePagerBarViewAux
@@ -84,7 +84,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.settings.barStyle.tabHeight))
             
             var newContainerViewFrame = containerView.frame
-            let pagerBarHeight = self.settings.barStyle.tabHeight ?? 44
+            let pagerBarHeight = self.settings.barStyle.tabHeight
             newContainerViewFrame.origin.y = pagerBarHeight + navigationBarHeight
             print("y is \(pagerBarHeight + navigationBarHeight)")
             newContainerViewFrame.size.height = containerView.frame.size.height - (pagerBarHeight + navigationBarHeight + containerView.frame.origin.y)
