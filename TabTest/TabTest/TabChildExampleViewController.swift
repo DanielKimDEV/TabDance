@@ -15,9 +15,9 @@ class EmojiReactionMemberTableViewController: UITableViewController, IndicatorIn
 
     let cellIdentifier = "Cell"
 
-    var itemInfo = TabIndicatorInfo(title: "View")
+    var itemInfo = TabIndicatorData(title: "View")
 
-    init(style: UITableView.Style, itemInfo: TabIndicatorInfo) {
+    init(style: UITableView.Style, itemInfo: TabIndicatorData) {
         self.itemInfo = itemInfo
         super.init(style: style)
     }
@@ -66,7 +66,7 @@ class EmojiReactionMemberTableViewController: UITableViewController, IndicatorIn
 
     // IndicatorInfoProvider
 
-    func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorInfo {
+    func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorData {
         return itemInfo
     }
 

@@ -11,7 +11,7 @@ import UIKit
 import RxSwift
 
 //Todo - 뷰가 회전 할때는 고려 하지 않음, 뷰 회전 할때 다시 잡아 주는 동작 필요함.
-class BasePagerViewController: BasePagerTabStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
+class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSource, PagerTabStripIsProgressiveDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     var settings = BasePagerSettings()
     
     var pagerBarItemSpec: PagerBarItemSpec<BasePagerViewCell>!
@@ -71,23 +71,25 @@ class BasePagerViewController: BasePagerTabStripViewController, PagerTabStripDat
             return pagerBar
             }()
         pagerBar = BasePagerBarViewAux
-        
+
         if pagerBar.superview == nil {
             view.addSubview(pagerBar)
             
             pagerBar.translatesAutoresizingMaskIntoConstraints = false
+            
+              let navigationBarHeight = self.navigationController?.navigationBar.frame.height ?? 0.0
             
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0))
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.settings.barStyle.tabDanceHeight))
             
             var newContainerViewFrame = containerView.frame
-
-            let navigationBarHeight:CGFloat = 100
-            let pagerBarHeight = settings.barStyle.selectedBarHeight ?? 44
+            let pagerBarHeight = self.settings.barStyle.tabDanceHeight ?? 44
             newContainerViewFrame.origin.y = pagerBarHeight + navigationBarHeight
+            print("y is \(pagerBarHeight + navigationBarHeight)")
             newContainerViewFrame.size.height = containerView.frame.size.height - (pagerBarHeight + navigationBarHeight + containerView.frame.origin.y)
             containerView.frame = newContainerViewFrame
+            
         }
         if pagerBar.delegate == nil {
             pagerBar.delegate = self
@@ -161,7 +163,7 @@ class BasePagerViewController: BasePagerTabStripViewController, PagerTabStripDat
         return calculateStretchedCellWidths(minimumCellWidths, suggestedStretchedCellWidth: newSuggestedStretchedCellWidth, previousNumberOfLargeCells: numberOfLargeCells)
     }
     
-    func updateIndicator(for viewController: BasePagerTabStripViewController, fromIndex: Int, toIndex: Int) {
+    func updateIndicator(for viewController: BasePagerStripViewController, fromIndex: Int, toIndex: Int) {
         guard shouldUpdateBasePagerBarView else { return }
         pagerBar.moveTo(index: toIndex, animated: false, swipeDirection: toIndex < fromIndex ? .right : .left, pagerScroll: .yes)
         
@@ -174,7 +176,7 @@ class BasePagerViewController: BasePagerTabStripViewController, PagerTabStripDat
         }
     }
     
-    func updateIndicator(for viewController: BasePagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
+    func updateIndicator(for viewController: BasePagerStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         guard shouldUpdateBasePagerBarView else { return }
         pagerBar.move(fromIndex: fromIndex, toIndex: toIndex, progressPercentage: progressPercentage, pagerScroll: .yes)
         if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {

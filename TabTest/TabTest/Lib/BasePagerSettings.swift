@@ -51,13 +51,13 @@ struct BasePagerSettings {
 
 
 protocol IndicatorInfoProvider: UIViewController {
-    func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorInfo
+    func indicatorInfo(for tabDanceViewController: BasePagerViewController) -> TabIndicatorData
 }
 
 
 enum PagerBarItemSpec<CellType: UICollectionViewCell> {
-    case cellClass(width:((TabIndicatorInfo)-> CGFloat))
-    var weight: ((TabIndicatorInfo) -> CGFloat) {
+    case cellClass(width:((TabIndicatorData)-> CGFloat))
+    var weight: ((TabIndicatorData) -> CGFloat) {
         switch self {
         case .cellClass(let widthCallback):
             return widthCallback

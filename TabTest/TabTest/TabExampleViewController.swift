@@ -58,7 +58,7 @@ class TabExampleViewController : BasePagerViewController {
     }
     
     
-    override func viewControllers(for pagerTabStripController: BasePagerTabStripViewController) -> [UIViewController] {
+    override func viewControllers(for pagerTabStripController: BasePagerStripViewController) -> [UIViewController] {
            
 
            let child_1 = EmojiReactionMemberTableViewController(style: .plain, itemInfo: "😍 999")

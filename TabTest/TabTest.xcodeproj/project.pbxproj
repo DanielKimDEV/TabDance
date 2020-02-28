@@ -22,7 +22,7 @@
 		ABD8BBA52406639F001739CE /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA42406639F001739CE /* RxRelay */; };
 		ABD8BBA72406639F001739CE /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA62406639F001739CE /* RxCocoa */; };
 		ABD8BBA92406639F001739CE /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = ABD8BBA82406639F001739CE /* RxBlocking */; };
-		ABD8BBC824068005001739CE /* TabIndicatorInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */; };
+		ABD8BBC824068005001739CE /* TabIndicatorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBC324068005001739CE /* TabIndicatorData.swift */; };
 		ABD8BBCA24068147001739CE /* BasePagerBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBC924068147001739CE /* BasePagerBarView.swift */; };
 		ABD8BBCC24068183001739CE /* BasePagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */; };
 		ABD8BBCE240681BB001739CE /* BasePagerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */; };
@@ -42,7 +42,7 @@
 		ABC9EA9223FED3C600C6C07F /* TabChildExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabChildExampleViewController.swift; sourceTree = "<group>"; };
 		ABC9EA9523FED40200C6C07F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		ABC9EA9723FED6C800C6C07F /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
-		ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorInfo.swift; sourceTree = "<group>"; };
+		ABD8BBC324068005001739CE /* TabIndicatorData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabIndicatorData.swift; sourceTree = "<group>"; };
 		ABD8BBC924068147001739CE /* BasePagerBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerBarView.swift; sourceTree = "<group>"; };
 		ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerViewCell.swift; sourceTree = "<group>"; };
 		ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePagerSettings.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				ABD8BBCB24068183001739CE /* BasePagerViewCell.swift */,
 				ABD8BBCD240681BB001739CE /* BasePagerSettings.swift */,
 				ABD8BBCF240681DB001739CE /* BasePagerViewController.swift */,
-				ABD8BBC324068005001739CE /* TabIndicatorInfo.swift */,
+				ABD8BBC324068005001739CE /* TabIndicatorData.swift */,
 				AB31D5E12407539A00DD37C2 /* BasePagerStripViewController.swift */,
 			);
 			path = Lib;
@@ -218,7 +218,7 @@
 				ABC9EA6F23FE968D00C6C07F /* AppDelegate.swift in Sources */,
 				ABC9EA9823FED6C800C6C07F /* DataProvider.swift in Sources */,
 				AB31D5E22407539A00DD37C2 /* BasePagerStripViewController.swift in Sources */,
-				ABD8BBC824068005001739CE /* TabIndicatorInfo.swift in Sources */,
+				ABD8BBC824068005001739CE /* TabIndicatorData.swift in Sources */,
 				ABC9EA7123FE968D00C6C07F /* SceneDelegate.swift in Sources */,
 				ABFA2704240424CE00430334 /* TabExampleViewController.swift in Sources */,
 				ABD8BBCA24068147001739CE /* BasePagerBarView.swift in Sources */,
