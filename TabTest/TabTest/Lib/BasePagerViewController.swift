@@ -43,21 +43,21 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
         pagerBarItemSpec = .cellClass(width: { [weak self] (childItemInfo) -> CGFloat in
             let label = UILabel()
             label.translatesAutoresizingMaskIntoConstraints = false
-            label.font =  self?.settings.barStyle.tabDanceItemFont
+            label.font =  self?.settings.barStyle.tabItemFont
             label.text = childItemInfo.title
             let labelSize = label.intrinsicContentSize
-            return labelSize.width + (self?.settings.barStyle.tabDanceItemLeftRightMargin ?? 8) * 2
+            return labelSize.width + (self?.settings.barStyle.tabItemLeftRightMargin ?? 8) * 2
         })
         
         let BasePagerBarViewAux = pagerBar ?? {
             let flowLayout = UICollectionViewFlowLayout()
             
             flowLayout.scrollDirection = .horizontal
-            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: settings.barStyle.tabDanceLeftContentInset ?? 0, bottom: 0, right: settings.barStyle.tabDanceRightContentInset ?? 0)
+            flowLayout.sectionInset = UIEdgeInsets(top: 0, left: settings.barStyle.tabLeftContentInset ?? 0, bottom: 0, right: settings.barStyle.tabRightContentInset ?? 0)
             
             flowLayout.scrollDirection = .horizontal
-            flowLayout.minimumInteritemSpacing = settings.barStyle.tabDanceMinimumInteritemSpacing ?? flowLayout.minimumInteritemSpacing
-            flowLayout.minimumLineSpacing = settings.barStyle.tabDanceMinimumLineSpacing ?? flowLayout.minimumLineSpacing
+            flowLayout.minimumInteritemSpacing = settings.barStyle.tabMinimumInteritemSpacing ?? flowLayout.minimumInteritemSpacing
+            flowLayout.minimumLineSpacing = settings.barStyle.tabMinimumLineSpacing ?? flowLayout.minimumLineSpacing
             
             let pagerBar = BasePagerBarView(frame: .zero, collectionViewLayout: flowLayout)
             pagerBar.backgroundColor = .white
@@ -67,7 +67,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
             //후에 바텀라인 지우는거 만들것
             
             let sectionInset = flowLayout.sectionInset
-            flowLayout.sectionInset = UIEdgeInsets(top: sectionInset.top, left: settings.barStyle.tabDanceLeftContentInset  ?? sectionInset.left, bottom: sectionInset.bottom, right: settings.barStyle.tabDanceRightContentInset  ?? sectionInset.right)
+            flowLayout.sectionInset = UIEdgeInsets(top: sectionInset.top, left: settings.barStyle.tabLeftContentInset  ?? sectionInset.left, bottom: sectionInset.bottom, right: settings.barStyle.tabRightContentInset  ?? sectionInset.right)
             return pagerBar
             }()
         pagerBar = BasePagerBarViewAux
@@ -81,10 +81,10 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
             
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .top, relatedBy: .equal, toItem: self.view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
             self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .width, relatedBy: .equal, toItem: self.view, attribute: .width, multiplier: 1, constant: 0))
-            self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.settings.barStyle.tabDanceHeight))
+            self.view.addConstraint(NSLayoutConstraint(item: pagerBar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: self.settings.barStyle.tabHeight))
             
             var newContainerViewFrame = containerView.frame
-            let pagerBarHeight = self.settings.barStyle.tabDanceHeight ?? 44
+            let pagerBarHeight = self.settings.barStyle.tabHeight ?? 44
             newContainerViewFrame.origin.y = pagerBarHeight + navigationBarHeight
             print("y is \(pagerBarHeight + navigationBarHeight)")
             newContainerViewFrame.size.height = containerView.frame.size.height - (pagerBarHeight + navigationBarHeight + containerView.frame.origin.y)
@@ -101,7 +101,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
         
         
         pagerBar.showsHorizontalScrollIndicator = false
-        pagerBar.backgroundColor = settings.barStyle.tabDanceBarBackgroundColor ?? pagerBar.backgroundColor
+        pagerBar.backgroundColor = settings.barStyle.tabBarBackgroundColor ?? pagerBar.backgroundColor
         pagerBar.selectedBar.backgroundColor = settings.barStyle.selectedBarBackgroundColor
         
         pagerBar.selectedBarHeight = settings.barStyle.selectedBarHeight
@@ -258,10 +258,10 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
         let indicatorInfo = childController.indicatorInfo(for: self)
         
         cell.label.text = indicatorInfo.title
-        cell.label.font = settings.barStyle.tabDanceItemFont
-        cell.label.textColor = self.settings.barStyle.tabDanceItemTitleColor ?? cell.label.textColor
-        cell.contentView.backgroundColor = self.settings.barStyle.tabDanceItemBackgroundColor ?? cell.contentView.backgroundColor
-        cell.backgroundColor = self.settings.barStyle.tabDanceItemBackgroundColor ?? cell.backgroundColor
+        cell.label.font = settings.barStyle.tabItemFont
+        cell.label.textColor = self.settings.barStyle.tabItemTitleColor ?? cell.label.textColor
+        cell.contentView.backgroundColor = self.settings.barStyle.tabItemBackgroundColor ?? cell.contentView.backgroundColor
+        cell.backgroundColor = self.settings.barStyle.tabItemBackgroundColor ?? cell.backgroundColor
         
         if pagerBehaviour.isProgressiveIndicator {
             if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {
@@ -313,7 +313,7 @@ class BasePagerViewController: BasePagerStripViewController, PagerTabStripDataSo
         
         let collectionViewAvailableVisibleWidth = pagerBar.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right
         
-        if !settings.barStyle.tabDanceItemsShouldFillAvailableWidth || collectionViewAvailableVisibleWidth < collectionViewContentWidth {
+        if !settings.barStyle.tabItemsShouldFillAvailableWidth || collectionViewAvailableVisibleWidth < collectionViewContentWidth {
             return minimumCellWidths
         } else {
             let stretchedCellWidthIfAllEqual = (collectionViewAvailableVisibleWidth - cellSpacingTotal) / CGFloat(numberOfCells)

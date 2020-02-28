@@ -11,26 +11,26 @@ import UIKit
 
 struct BasePagerSettings {
     struct BarStyle{
-        var tabDanceBarBackgroundColor: UIColor?
-        var tabDanceMinimumInteritemSpacing: CGFloat?
-        var tabDanceMinimumLineSpacing: CGFloat?
-        var tabDanceLeftContentInset: CGFloat = 20
-        var tabDanceRightContentInset: CGFloat = 20
+        var tabBarBackgroundColor: UIColor?
+        var tabMinimumInteritemSpacing: CGFloat?
+        var tabMinimumLineSpacing: CGFloat?
+        var tabLeftContentInset: CGFloat = 20
+        var tabRightContentInset: CGFloat = 20
         
         var selectedBarBackgroundColor = UIColor.black
         var selectedBarHeight: CGFloat = 2
         var selectedBarVerticalAlignment: SelectedBarVerticalAlignment = .bottom
         
-        var tabDanceItemBackgroundColor: UIColor?
-        var tabDanceItemFont = UIFont.systemFont(ofSize: 18)
-        var tabDanceItemLeftRightMargin: CGFloat = 8
-        var tabDanceItemTitleColor: UIColor?
-        var tabDanceItemsShouldFillAvailableWidth = true
+        var tabItemBackgroundColor: UIColor?
+        var tabItemFont = UIFont.systemFont(ofSize: 18)
+        var tabItemLeftRightMargin: CGFloat = 8
+        var tabItemTitleColor: UIColor?
+        var tabItemsShouldFillAvailableWidth = true
         
-        var tabDanceItemSelectedLabelColor: UIColor = .black
-        var tabDanceItemUnselectedLabelColor: UIColor = .gray
+        var tabItemSelectedLabelColor: UIColor = .black
+        var tabItemUnselectedLabelColor: UIColor = .gray
         
-        var tabDanceHeight: CGFloat = 38
+        var tabHeight: CGFloat = 38
         
         var pagerBottomBarUnderLine: Bool = false
         var pagerBottomBarUnderLineColor: UIColor = .white

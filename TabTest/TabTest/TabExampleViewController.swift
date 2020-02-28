@@ -28,12 +28,12 @@ class TabExampleViewController : BasePagerViewController {
         self.title = "이모지 반응한 멤버"
         var customSettings = BasePagerSettings()
         let inset :CGFloat = 20
-        customSettings.barStyle.tabDanceBarBackgroundColor = .white
-        customSettings.barStyle.tabDanceLeftContentInset = inset
-        customSettings.barStyle.tabDanceRightContentInset = inset
-        customSettings.barStyle.tabDanceHeight = 38
-        customSettings.barStyle.tabDanceMinimumInteritemSpacing = 24
-        customSettings.barStyle.tabDanceItemLeftRightMargin = 0
+        customSettings.barStyle.tabBarBackgroundColor = .white
+        customSettings.barStyle.tabLeftContentInset = inset
+        customSettings.barStyle.tabRightContentInset = inset
+        customSettings.barStyle.tabHeight = 38
+        customSettings.barStyle.tabMinimumInteritemSpacing = 24
+        customSettings.barStyle.tabItemLeftRightMargin = 0
         
         settings = customSettings
         
